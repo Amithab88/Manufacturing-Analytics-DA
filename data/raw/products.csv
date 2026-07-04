@@ -1,0 +1,21 @@
+product_name,category,unit_cost,selling_price
+Brake Pad,Braking System,1069,1456.59
+Brake Disc,Braking System,920,1365.42
+Clutch Plate,Transmission,1894,2677.31
+Gear Shaft,Transmission,3440,4162.84
+Crankshaft,Engine,3988,5896.68
+Engine Valve,Engine,2319,3353.83
+Piston Ring,Engine,3420,4147.64
+Ball Bearing,Bearings,539,806.85
+Roller Bearing,Bearings,548,711.78
+Steering Knuckle,Steering,2485,2986.48
+Axle Shaft,Drivetrain,1612,1982.5
+Wheel Hub,Wheels,2121,2622.57
+Suspension Arm,Suspension,2030,2582.42
+Control Arm,Suspension,1660,2261.03
+Fuel Injector,Fuel System,2584,3597.96
+Oil Pump,Engine,2018,3016.94
+Flywheel,Engine,3643,5341.27
+Timing Belt,Engine,2867,3686.92
+Chassis Bracket,Chassis,1222,1654.95
+Mounting Plate,Chassis,1136,1502.41
