@@ -399,3 +399,44 @@ print("✓ Service dates validated")
 print("=" * 60)
 print("ALL VALIDATIONS PASSED")
 print("=" * 60)
+
+# ==========================================================
+# Arrange Columns
+# ==========================================================
+
+df = df[
+    [
+        "machine_name",
+        "machine_type",
+        "installation_date",
+        "status",
+        "last_service_date",
+        "factory_id"
+    ]
+]
+
+# ==========================================================
+# Export CSV
+# ==========================================================
+
+output_path = "C:/Users/AMITHAB/OneDrive/Documents/My Project/manufacturing-analytics/data/raw/machines.csv"
+
+df.to_csv(output_path, index=False)
+
+# ==========================================================
+# Execution Summary
+# ==========================================================
+
+print()
+print("=" * 60)
+print("MACHINES DATASET GENERATED SUCCESSFULLY")
+print("=" * 60)
+
+print(f"Total Machines        : {len(df)}")
+print(f"Factories Covered     : {df['factory_id'].nunique()}")
+print(f"Machine Types         : {df['machine_type'].nunique()}")
+print(f"Output File           : {output_path}")
+
+print("=" * 60)
+print("Ready for MySQL Import")
+print("=" * 60)
