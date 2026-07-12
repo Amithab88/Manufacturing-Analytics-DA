@@ -1,101 +1,101 @@
-machine_name,machine_type,installation_date,status,last_service_date,factory_id
-CNC-001,CNC Machine,2015-10-23,Running,2025-08-16,1
-CNC-002,CNC Machine,2025-05-05,Running,2025-10-14,1
-CNC-003,CNC Machine,2016-12-14,Running,2025-07-28,1
-CNC-004,CNC Machine,2020-02-15,Running,2025-07-19,1
-CNC-005,CNC Machine,2017-03-10,Running,2025-11-21,1
-CNC-006,CNC Machine,2012-03-10,Idle,2025-01-22,1
-CNC-007,CNC Machine,2016-10-27,Running,2025-09-12,1
-CNC-008,CNC Machine,2022-05-17,Running,2025-08-29,1
-ROB-001,Assembly Robot,2021-08-23,Idle,2025-02-11,1
-ROB-002,Assembly Robot,2020-04-06,Running,2025-07-18,1
-ROB-003,Assembly Robot,2025-03-14,Running,2025-11-23,1
-ROB-004,Assembly Robot,2023-01-18,Under Maintenance,2025-12-27,1
-ROB-005,Assembly Robot,2016-12-25,Running,2025-11-21,1
-ROB-006,Assembly Robot,2020-11-17,Running,2025-09-02,1
-INJ-001,Injection Molding Machine,2015-09-10,Running,2025-10-11,1
-INJ-002,Injection Molding Machine,2019-03-27,Running,2025-10-31,1
-INJ-003,Injection Molding Machine,2015-08-15,Under Maintenance,2025-12-08,1
-INJ-004,Injection Molding Machine,2024-01-22,Running,2025-09-03,1
-LAS-001,Laser Cutter,2025-12-15,Running,2025-12-15,1
-LAS-002,Laser Cutter,2023-07-03,Running,2025-11-26,1
-LAS-003,Laser Cutter,2018-06-17,Running,2025-07-11,1
-LAS-004,Laser Cutter,2015-05-11,Running,2025-10-20,1
-HYD-001,Hydraulic Press,2022-01-28,Running,2025-07-12,1
-HYD-002,Hydraulic Press,2020-06-21,Running,2025-09-17,1
-HYD-003,Hydraulic Press,2021-10-01,Running,2025-10-02,1
-PKG-001,Packaging Machine,2017-04-26,Running,2025-10-08,1
-PKG-002,Packaging Machine,2020-02-20,Idle,2025-09-07,1
-CON-001,Conveyor System,2024-07-26,Running,2025-10-24,1
-CNC-009,CNC Machine,2020-10-09,Running,2025-09-02,2
-CNC-010,CNC Machine,2017-01-24,Running,2025-11-10,2
-CNC-011,CNC Machine,2017-03-27,Running,2025-09-03,2
-CNC-012,CNC Machine,2018-10-03,Idle,2025-03-13,2
-CNC-013,CNC Machine,2016-03-04,Running,2025-07-07,2
-CNC-014,CNC Machine,2015-04-09,Running,2025-10-23,2
-ROB-007,Assembly Robot,2025-02-04,Running,2025-07-31,2
-ROB-008,Assembly Robot,2019-05-03,Running,2025-11-20,2
-ROB-009,Assembly Robot,2018-05-16,Under Maintenance,2025-12-22,2
-ROB-010,Assembly Robot,2020-07-18,Running,2025-07-16,2
-ROB-011,Assembly Robot,2016-04-07,Running,2025-08-02,2
-INJ-005,Injection Molding Machine,2021-01-11,Running,2025-11-27,2
-INJ-006,Injection Molding Machine,2023-03-17,Running,2025-11-02,2
-INJ-007,Injection Molding Machine,2020-07-17,Running,2025-09-02,2
-INJ-008,Injection Molding Machine,2013-04-11,Under Maintenance,2025-12-30,2
-LAS-005,Laser Cutter,2020-12-17,Running,2025-09-27,2
-LAS-006,Laser Cutter,2015-07-05,Running,2025-10-19,2
-LAS-007,Laser Cutter,2016-01-07,Idle,2025-01-15,2
-HYD-004,Hydraulic Press,2019-03-22,Running,2025-10-31,2
-HYD-005,Hydraulic Press,2019-01-19,Running,2025-09-22,2
-PKG-003,Packaging Machine,2024-03-08,Running,2025-10-24,2
-PKG-004,Packaging Machine,2025-11-06,Running,2025-11-06,2
-CON-002,Conveyor System,2015-07-20,Running,2025-08-08,2
-CON-003,Conveyor System,2017-11-23,Running,2025-10-15,2
-CNC-015,CNC Machine,2024-05-06,Running,2025-11-25,3
-CNC-016,CNC Machine,2016-12-15,Running,2025-11-13,3
-CNC-017,CNC Machine,2016-05-05,Running,2025-09-01,3
-CNC-018,CNC Machine,2024-03-01,Running,2025-07-09,3
-CNC-019,CNC Machine,2015-01-07,Running,2025-08-26,3
-ROB-012,Assembly Robot,2021-12-09,Running,2025-11-14,3
-ROB-013,Assembly Robot,2022-02-10,Running,2025-08-21,3
-ROB-014,Assembly Robot,2022-03-21,Running,2025-07-28,3
-ROB-015,Assembly Robot,2021-04-13,Running,2025-09-19,3
-INJ-009,Injection Molding Machine,2021-08-27,Running,2025-10-22,3
-INJ-010,Injection Molding Machine,2024-07-17,Running,2025-10-12,3
-INJ-011,Injection Molding Machine,2015-04-04,Running,2025-10-08,3
-LAS-008,Laser Cutter,2019-09-10,Running,2025-10-17,3
-LAS-009,Laser Cutter,2021-10-09,Running,2025-09-30,3
-HYD-006,Hydraulic Press,2013-10-03,Idle,2025-07-07,3
-HYD-007,Hydraulic Press,2025-04-27,Under Maintenance,2025-12-12,3
-PKG-005,Packaging Machine,2013-08-16,Idle,2025-06-24,3
-PKG-006,Packaging Machine,2019-11-14,Running,2025-10-18,3
-CON-004,Conveyor System,2023-03-07,Running,2025-10-06,3
-CON-005,Conveyor System,2025-12-12,Running,2025-12-12,3
-CNC-020,CNC Machine,2020-04-15,Under Maintenance,2025-12-19,4
-CNC-021,CNC Machine,2018-06-24,Running,2025-07-27,4
-CNC-022,CNC Machine,2015-02-28,Running,2025-07-09,4
-CNC-023,CNC Machine,2017-01-16,Running,2025-08-05,4
-ROB-016,Assembly Robot,2015-06-22,Running,2025-10-15,4
-ROB-017,Assembly Robot,2016-03-12,Idle,2025-02-16,4
-ROB-018,Assembly Robot,2024-11-04,Running,2025-09-20,4
-INJ-012,Injection Molding Machine,2023-03-24,Running,2025-08-27,4
-INJ-013,Injection Molding Machine,2020-09-20,Running,2025-11-19,4
-LAS-010,Laser Cutter,2020-10-13,Running,2025-09-21,4
-LAS-011,Laser Cutter,2024-08-25,Running,2025-10-08,4
-HYD-008,Hydraulic Press,2017-08-25,Idle,2025-06-11,4
-HYD-009,Hydraulic Press,2024-04-17,Running,2025-08-27,4
-PKG-007,Packaging Machine,2015-10-07,Running,2025-07-28,4
-PKG-008,Packaging Machine,2018-04-16,Running,2025-09-21,4
-CON-006,Conveyor System,2022-12-13,Running,2025-07-08,4
-CNC-024,CNC Machine,2022-12-02,Running,2025-09-14,5
-CNC-025,CNC Machine,2013-08-21,Retired,2024-10-25,5
-ROB-019,Assembly Robot,2021-03-13,Running,2025-08-18,5
-ROB-020,Assembly Robot,2016-12-14,Running,2025-10-15,5
-INJ-014,Injection Molding Machine,2016-11-03,Retired,2023-02-17,5
-INJ-015,Injection Molding Machine,2020-12-04,Running,2025-08-12,5
-LAS-012,Laser Cutter,2024-03-09,Running,2025-12-02,5
-HYD-010,Hydraulic Press,2025-02-09,Running,2025-07-21,5
-PKG-009,Packaging Machine,2018-11-22,Running,2025-08-18,5
-PKG-010,Packaging Machine,2024-04-11,Running,2025-10-31,5
-CON-007,Conveyor System,2019-04-10,Idle,2025-08-07,5
-CON-008,Conveyor System,2016-01-22,Running,2025-10-25,5
+machine_id,machine_name,machine_type,installation_date,status,last_service_date,factory_id
+1,CNC-001,"CNC Machine",2015-10-23,Running,2025-08-16,1
+2,CNC-002,"CNC Machine",2025-05-05,Running,2025-10-14,1
+3,CNC-003,"CNC Machine",2016-12-14,Running,2025-07-28,1
+4,CNC-004,"CNC Machine",2020-02-15,Running,2025-07-19,1
+5,CNC-005,"CNC Machine",2017-03-10,Running,2025-11-21,1
+6,CNC-006,"CNC Machine",2012-03-10,Idle,2025-01-22,1
+7,CNC-007,"CNC Machine",2016-10-27,Running,2025-09-12,1
+8,CNC-008,"CNC Machine",2022-05-17,Running,2025-08-29,1
+9,ROB-001,"Assembly Robot",2021-08-23,Idle,2025-02-11,1
+10,ROB-002,"Assembly Robot",2020-04-06,Running,2025-07-18,1
+11,ROB-003,"Assembly Robot",2025-03-14,Running,2025-11-23,1
+12,ROB-004,"Assembly Robot",2023-01-18,"Under Maintenance",2025-12-27,1
+13,ROB-005,"Assembly Robot",2016-12-25,Running,2025-11-21,1
+14,ROB-006,"Assembly Robot",2020-11-17,Running,2025-09-02,1
+15,INJ-001,"Injection Molding Machine",2015-09-10,Running,2025-10-11,1
+16,INJ-002,"Injection Molding Machine",2019-03-27,Running,2025-10-31,1
+17,INJ-003,"Injection Molding Machine",2015-08-15,"Under Maintenance",2025-12-08,1
+18,INJ-004,"Injection Molding Machine",2024-01-22,Running,2025-09-03,1
+19,LAS-001,"Laser Cutter",2025-12-15,Running,2025-12-15,1
+20,LAS-002,"Laser Cutter",2023-07-03,Running,2025-11-26,1
+21,LAS-003,"Laser Cutter",2018-06-17,Running,2025-07-11,1
+22,LAS-004,"Laser Cutter",2015-05-11,Running,2025-10-20,1
+23,HYD-001,"Hydraulic Press",2022-01-28,Running,2025-07-12,1
+24,HYD-002,"Hydraulic Press",2020-06-21,Running,2025-09-17,1
+25,HYD-003,"Hydraulic Press",2021-10-01,Running,2025-10-02,1
+26,PKG-001,"Packaging Machine",2017-04-26,Running,2025-10-08,1
+27,PKG-002,"Packaging Machine",2020-02-20,Idle,2025-09-07,1
+28,CON-001,"Conveyor System",2024-07-26,Running,2025-10-24,1
+29,CNC-009,"CNC Machine",2020-10-09,Running,2025-09-02,2
+30,CNC-010,"CNC Machine",2017-01-24,Running,2025-11-10,2
+31,CNC-011,"CNC Machine",2017-03-27,Running,2025-09-03,2
+32,CNC-012,"CNC Machine",2018-10-03,Idle,2025-03-13,2
+33,CNC-013,"CNC Machine",2016-03-04,Running,2025-07-07,2
+34,CNC-014,"CNC Machine",2015-04-09,Running,2025-10-23,2
+35,ROB-007,"Assembly Robot",2025-02-04,Running,2025-07-31,2
+36,ROB-008,"Assembly Robot",2019-05-03,Running,2025-11-20,2
+37,ROB-009,"Assembly Robot",2018-05-16,"Under Maintenance",2025-12-22,2
+38,ROB-010,"Assembly Robot",2020-07-18,Running,2025-07-16,2
+39,ROB-011,"Assembly Robot",2016-04-07,Running,2025-08-02,2
+40,INJ-005,"Injection Molding Machine",2021-01-11,Running,2025-11-27,2
+41,INJ-006,"Injection Molding Machine",2023-03-17,Running,2025-11-02,2
+42,INJ-007,"Injection Molding Machine",2020-07-17,Running,2025-09-02,2
+43,INJ-008,"Injection Molding Machine",2013-04-11,"Under Maintenance",2025-12-30,2
+44,LAS-005,"Laser Cutter",2020-12-17,Running,2025-09-27,2
+45,LAS-006,"Laser Cutter",2015-07-05,Running,2025-10-19,2
+46,LAS-007,"Laser Cutter",2016-01-07,Idle,2025-01-15,2
+47,HYD-004,"Hydraulic Press",2019-03-22,Running,2025-10-31,2
+48,HYD-005,"Hydraulic Press",2019-01-19,Running,2025-09-22,2
+49,PKG-003,"Packaging Machine",2024-03-08,Running,2025-10-24,2
+50,PKG-004,"Packaging Machine",2025-11-06,Running,2025-11-06,2
+51,CON-002,"Conveyor System",2015-07-20,Running,2025-08-08,2
+52,CON-003,"Conveyor System",2017-11-23,Running,2025-10-15,2
+53,CNC-015,"CNC Machine",2024-05-06,Running,2025-11-25,3
+54,CNC-016,"CNC Machine",2016-12-15,Running,2025-11-13,3
+55,CNC-017,"CNC Machine",2016-05-05,Running,2025-09-01,3
+56,CNC-018,"CNC Machine",2024-03-01,Running,2025-07-09,3
+57,CNC-019,"CNC Machine",2015-01-07,Running,2025-08-26,3
+58,ROB-012,"Assembly Robot",2021-12-09,Running,2025-11-14,3
+59,ROB-013,"Assembly Robot",2022-02-10,Running,2025-08-21,3
+60,ROB-014,"Assembly Robot",2022-03-21,Running,2025-07-28,3
+61,ROB-015,"Assembly Robot",2021-04-13,Running,2025-09-19,3
+62,INJ-009,"Injection Molding Machine",2021-08-27,Running,2025-10-22,3
+63,INJ-010,"Injection Molding Machine",2024-07-17,Running,2025-10-12,3
+64,INJ-011,"Injection Molding Machine",2015-04-04,Running,2025-10-08,3
+65,LAS-008,"Laser Cutter",2019-09-10,Running,2025-10-17,3
+66,LAS-009,"Laser Cutter",2021-10-09,Running,2025-09-30,3
+67,HYD-006,"Hydraulic Press",2013-10-03,Idle,2025-07-07,3
+68,HYD-007,"Hydraulic Press",2025-04-27,"Under Maintenance",2025-12-12,3
+69,PKG-005,"Packaging Machine",2013-08-16,Idle,2025-06-24,3
+70,PKG-006,"Packaging Machine",2019-11-14,Running,2025-10-18,3
+71,CON-004,"Conveyor System",2023-03-07,Running,2025-10-06,3
+72,CON-005,"Conveyor System",2025-12-12,Running,2025-12-12,3
+73,CNC-020,"CNC Machine",2020-04-15,"Under Maintenance",2025-12-19,4
+74,CNC-021,"CNC Machine",2018-06-24,Running,2025-07-27,4
+75,CNC-022,"CNC Machine",2015-02-28,Running,2025-07-09,4
+76,CNC-023,"CNC Machine",2017-01-16,Running,2025-08-05,4
+77,ROB-016,"Assembly Robot",2015-06-22,Running,2025-10-15,4
+78,ROB-017,"Assembly Robot",2016-03-12,Idle,2025-02-16,4
+79,ROB-018,"Assembly Robot",2024-11-04,Running,2025-09-20,4
+80,INJ-012,"Injection Molding Machine",2023-03-24,Running,2025-08-27,4
+81,INJ-013,"Injection Molding Machine",2020-09-20,Running,2025-11-19,4
+82,LAS-010,"Laser Cutter",2020-10-13,Running,2025-09-21,4
+83,LAS-011,"Laser Cutter",2024-08-25,Running,2025-10-08,4
+84,HYD-008,"Hydraulic Press",2017-08-25,Idle,2025-06-11,4
+85,HYD-009,"Hydraulic Press",2024-04-17,Running,2025-08-27,4
+86,PKG-007,"Packaging Machine",2015-10-07,Running,2025-07-28,4
+87,PKG-008,"Packaging Machine",2018-04-16,Running,2025-09-21,4
+88,CON-006,"Conveyor System",2022-12-13,Running,2025-07-08,4
+89,CNC-024,"CNC Machine",2022-12-02,Running,2025-09-14,5
+90,CNC-025,"CNC Machine",2013-08-21,Retired,2024-10-25,5
+91,ROB-019,"Assembly Robot",2021-03-13,Running,2025-08-18,5
+92,ROB-020,"Assembly Robot",2016-12-14,Running,2025-10-15,5
+93,INJ-014,"Injection Molding Machine",2016-11-03,Retired,2023-02-17,5
+94,INJ-015,"Injection Molding Machine",2020-12-04,Running,2025-08-12,5
+95,LAS-012,"Laser Cutter",2024-03-09,Running,2025-12-02,5
+96,HYD-010,"Hydraulic Press",2025-02-09,Running,2025-07-21,5
+97,PKG-009,"Packaging Machine",2018-11-22,Running,2025-08-18,5
+98,PKG-010,"Packaging Machine",2024-04-11,Running,2025-10-31,5
+99,CON-007,"Conveyor System",2019-04-10,Idle,2025-08-07,5
+100,CON-008,"Conveyor System",2016-01-22,Running,2025-10-25,5

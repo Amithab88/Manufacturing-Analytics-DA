@@ -1,301 +1,301 @@
-employee_name,designation,experience_years,salary,hire_date,factory_id,shift_id
-Ira Mane,Plant Manager,16,121357,2010-04-10,1,1
-Jai Sankar,Plant Manager,20,128958,2006-05-07,2,1
-Yahvi Mitter,Plant Manager,21,128605,2005-08-06,3,1
-Warhi Butala,Plant Manager,20,128672,2006-08-28,4,1
-Vasatika Bhatt,Plant Manager,17,122049,2009-12-27,5,1
-Ucchal Roy,Operator,4,27923,2022-02-05,1,3
-Warjas Garg,Operator,0,26323,2026-11-13,1,2
-Hema Dixit,Operator,3,27114,2023-02-21,1,1
-Dhruv Sarraf,Operator,4,28585,2022-08-12,1,1
-Pranav Pall,Operator,9,28294,2017-11-07,1,3
-Yash Parikh,Operator,12,32251,2014-01-14,1,1
-Manbir Patla,Operator,4,25442,2022-07-06,1,1
-Om Bhakta,Operator,0,25677,2026-07-16,1,1
-Harita Batra,Operator,5,27584,2021-03-18,1,2
-Ayaan Luthra,Operator,3,27076,2023-04-25,1,2
-Anjali Oak,Operator,15,33287,2011-07-11,1,1
-Jackson Seshadri,Operator,9,30283,2017-05-07,1,1
-Aadi Samra,Operator,1,27142,2025-06-16,1,1
-Samar Rege,Operator,5,29376,2021-12-01,1,1
-Oeshi Babu,Operator,8,27623,2018-11-03,1,3
-Ayush Tata,Operator,10,28529,2016-11-05,1,1
-Vritti Nath,Operator,11,32412,2015-07-16,1,1
-Omkaar Roy,Operator,6,28818,2020-10-11,1,2
-Lakshit Hayre,Operator,12,31199,2014-03-03,1,3
-Ekta Bhavsar,Operator,12,32987,2014-11-18,1,2
-Avni Patel,Operator,11,31827,2015-08-21,1,2
-Udyati Garg,Operator,10,31076,2016-09-27,1,1
-Falak Tank,Operator,2,25665,2024-01-11,1,1
-Harita Tara,Operator,13,31678,2013-04-08,1,2
-Nimrat Setty,Operator,4,25880,2022-03-03,1,1
-Balendra Sur,Operator,15,31015,2011-06-07,1,2
-Advik Barad,Operator,6,29148,2020-04-21,1,2
-Harrison Kaur,Operator,12,31302,2014-09-09,1,3
-Sachi Ghose,Operator,13,31607,2013-06-20,1,1
-Qasim Raja,Operator,3,25254,2023-02-12,1,2
-Tanvi Sama,Operator,3,26052,2023-07-22,1,1
-Yashica Kannan,Operator,1,25100,2025-08-27,1,1
-Lucky Jha,Operator,12,32602,2014-03-20,1,2
-Reyansh Mohanty,Operator,2,26126,2024-08-22,1,2
-Nimrat Ramanathan,Operator,10,29790,2016-09-10,1,1
-Udyati Sha,Operator,11,32090,2015-02-17,1,3
-Jack Mitter,Operator,13,32522,2013-05-25,1,3
-Lakshit Barad,Operator,3,26821,2023-05-01,1,3
-Rudra Shukla,Operator,3,28405,2023-05-19,1,3
-Udarsh Chaudhry,Operator,2,25445,2024-02-10,1,1
-Frederick Golla,Operator,6,26350,2020-09-16,1,1
-Brinda Dora,Operator,14,30063,2012-08-25,1,1
-Ikshita Patil,Operator,1,26321,2025-04-04,1,1
-Chanakya Sandal,Operator,13,32261,2013-09-23,1,2
-Leela Reddy,Operator,15,31047,2011-11-07,1,3
-Rehaan Bath,Operator,9,31026,2017-12-18,1,1
-Qadim Sathe,Operator,12,29596,2014-06-01,1,2
-Ekavir Raghavan,Operator,13,31130,2013-11-19,1,3
-Vedant Chaudhari,Technician,4,37759,2022-05-03,1,1
-Rachana Sankar,Technician,6,41005,2020-03-24,1,1
-Zayan Batta,Technician,18,48288,2008-09-17,1,2
-Rudra Bhagat,Technician,6,37855,2020-02-19,1,2
-Ranbir Parmar,Technician,8,42355,2018-06-25,1,1
-Qarin Ghose,Technician,7,39482,2019-06-02,1,3
-Caleb Behl,Technician,9,41464,2017-09-03,1,2
-Teerth Borah,Technician,8,39104,2018-07-23,1,3
-Quincy Natarajan,Technician,2,35000,2024-04-21,1,2
-Yashvi Ray,Technician,7,40771,2019-01-03,1,1
-Faqid Uppal,Technician,14,45295,2012-04-14,1,2
-Balhaar Kota,Technician,12,43346,2014-02-05,1,1
-Rachana Varughese,Technician,8,42466,2018-09-24,1,2
-Nathaniel Khare,Quality Inspector,5,42655,2021-05-22,1,2
-Upkaar Gupta,Quality Inspector,7,44857,2019-02-11,1,2
-Kashvi Lad,Quality Inspector,4,42050,2022-08-16,1,1
-Tristan Deep,Quality Inspector,11,50369,2015-02-19,1,1
-Isaac Balasubramanian,Quality Inspector,19,56955,2007-03-12,1,1
-Riya Thaman,Quality Inspector,11,48733,2015-02-07,1,2
-Yashica Dugar,Quality Inspector,11,48646,2015-03-12,1,2
-Gauri Iyengar,Quality Inspector,4,42289,2022-10-28,1,3
-Guneet Dua,Maintenance Engineer,18,67436,2008-04-07,1,3
-Ekanta Bhandari,Maintenance Engineer,5,53645,2021-08-27,1,3
-Rachita De,Maintenance Engineer,8,58684,2018-11-10,1,2
-Aryan Dey,Maintenance Engineer,16,64748,2010-05-18,1,1
-Leena Kakar,Supervisor,8,67874,2018-03-24,1,2
-Priya Chakraborty,Supervisor,22,87754,2004-09-28,1,1
-Akshay Parmer,Supervisor,14,76591,2012-06-08,1,2
-Maanas Ramachandran,Supervisor,11,71263,2015-08-05,1,2
-Yoshita Patil,Supervisor,18,83404,2008-04-25,1,1
-Zashil Babu,Supervisor,11,74797,2015-11-04,1,2
-Lila Madan,Operator,12,30245,2014-06-19,2,1
-Onveer Mammen,Operator,10,31110,2016-01-03,2,2
-Adweta Doshi,Operator,1,26449,2025-08-20,2,1
-Madhavi Krishnan,Operator,15,32440,2011-12-25,2,1
-Faris Ratti,Operator,12,32682,2014-02-27,2,2
-Bhavna Mody,Operator,10,29863,2016-03-07,2,3
-Shravya Sangha,Operator,2,25000,2024-01-20,2,2
-Unni Sharaf,Operator,9,28323,2017-11-01,2,3
-Jason Thakur,Operator,2,25000,2024-02-13,2,3
-Sanya Agrawal,Operator,15,32015,2011-04-04,2,2
-Gayathri Bir,Operator,7,29592,2019-07-07,2,3
-Chaitanya Lad,Operator,13,30569,2013-06-02,2,2
-Om Shan,Operator,6,27330,2020-04-26,2,3
-Nimrat Sidhu,Operator,2,26090,2024-09-02,2,1
-Praneel Tripathi,Operator,8,29455,2018-12-09,2,2
-Saksham Korpal,Operator,11,28993,2015-11-18,2,3
-Veda Pillay,Operator,6,29438,2020-04-06,2,2
-Upkaar Korpal,Operator,0,25301,2026-05-27,2,1
-Ira Virk,Operator,7,26966,2019-04-15,2,2
-Krishna De,Operator,1,26580,2025-02-16,2,1
-Yahvi Gulati,Operator,1,25000,2025-11-17,2,1
-Tanveer Sehgal,Operator,11,29655,2015-10-12,2,3
-Samaksh Shere,Operator,8,28446,2018-04-04,2,2
-Gunbir Mohanty,Operator,5,28110,2021-01-05,2,1
-Jagvi Issac,Operator,2,25000,2024-06-28,2,2
-Sai Sangha,Operator,5,26833,2021-05-09,2,3
-Yashawini Mahajan,Operator,2,25317,2024-08-02,2,3
-Vrishti Luthra,Operator,1,25549,2025-03-02,2,2
-Bhavani Dara,Operator,5,26069,2021-01-06,2,1
-Raghav Ganesan,Operator,7,27941,2019-06-18,2,2
-Patrick Iyengar,Operator,10,30851,2016-10-21,2,3
-Chanchal Das,Operator,8,28197,2018-04-10,2,2
-Panini Roy,Operator,1,27043,2025-05-24,2,3
-Krishna Choudhury,Operator,8,27064,2018-10-08,2,3
-Umang Din,Operator,7,30331,2019-02-27,2,2
-Jonathan Mahajan,Operator,13,32280,2013-07-04,2,2
-Nicholas D’Alia,Operator,4,25500,2022-08-07,2,3
-Yashvi Gopal,Operator,5,29185,2021-12-09,2,1
-Balveer Wadhwa,Operator,9,31272,2017-10-04,2,3
-Pahal Thakkar,Operator,9,27767,2017-07-18,2,2
-Faqid Dhingra,Operator,1,26038,2025-05-26,2,3
-Dayita Choudhary,Technician,10,43948,2016-03-21,2,1
-Tristan Kannan,Technician,16,45282,2010-06-08,2,3
-Laksh Jhaveri,Technician,11,43742,2015-01-18,2,1
-Vivaan Vohra,Technician,6,41017,2020-10-06,2,3
-Ethan Ganesh,Technician,7,37911,2019-09-27,2,2
-Chakradev Palla,Technician,15,47431,2011-11-27,2,3
-Lavanya Behl,Technician,14,42975,2012-03-07,2,3
-Chavvi Deshpande,Technician,18,47789,2008-07-07,2,1
-Onkar Ranganathan,Technician,11,41327,2015-01-09,2,2
-Brinda Mani,Technician,13,42630,2013-02-12,2,3
-Hemang Kunda,Technician,9,43287,2017-06-28,2,3
-Aarnav Bir,Technician,14,44489,2012-02-06,2,2
-Bakhshi Khurana,Quality Inspector,5,44267,2021-01-16,2,2
-Pranav Hayre,Quality Inspector,19,56207,2007-03-04,2,2
-Leela Chander,Quality Inspector,12,49515,2014-07-18,2,3
-Aachal Dara,Quality Inspector,15,50851,2011-10-14,2,1
-Unni Swamy,Quality Inspector,13,49939,2013-07-23,2,3
-Avni Chander,Quality Inspector,12,48229,2014-02-11,2,3
-Rachit Khanna,Quality Inspector,18,55083,2008-03-26,2,3
-Mohini Wali,Maintenance Engineer,12,61191,2014-12-02,2,1
-Thomas Bawa,Maintenance Engineer,15,64870,2011-11-19,2,3
-Ikshita Pillai,Maintenance Engineer,18,69604,2008-04-19,2,2
-Karan Khatri,Maintenance Engineer,11,61252,2015-04-12,2,2
-Falan Talwar,Supervisor,13,76263,2013-09-23,2,2
-Lakshmi Ramachandran,Supervisor,18,81347,2008-03-07,2,1
-Meera Barad,Supervisor,23,89208,2003-02-17,2,1
-Suhani Narain,Supervisor,11,72456,2015-10-02,2,2
-Charvi Sule,Supervisor,13,76017,2013-07-07,2,2
-Praneel Lad,Operator,3,26037,2023-12-07,3,1
-Megha Dhawan,Operator,9,30128,2017-02-25,3,2
-Yamini Edwin,Operator,9,28267,2017-11-10,3,2
-Rachita Dubey,Operator,0,25000,2026-11-14,3,2
-Balendra Padmanabhan,Operator,12,29648,2014-08-19,3,1
-Vedant Sachdeva,Operator,4,25664,2022-02-04,3,1
-Oscar Nagi,Operator,0,25000,2026-05-27,3,1
-Meera Halder,Operator,7,30307,2019-12-18,3,3
-Darsh Subramanian,Operator,0,25055,2026-03-02,3,2
-Ekani Nazareth,Operator,13,30705,2013-02-04,3,1
-Vedant Loke,Operator,12,29840,2014-03-22,3,2
-Robert Randhawa,Operator,4,27233,2022-11-06,3,3
-Victor Banerjee,Operator,11,29617,2015-05-01,3,3
-Hitesh Thaker,Operator,15,31808,2011-01-13,3,2
-Ijaya Kuruvilla,Operator,6,28175,2020-04-08,3,2
-Jalsa Dave,Operator,1,25077,2025-06-13,3,2
-Champak Sem,Operator,10,30565,2016-06-27,3,2
-Aarna Kulkarni,Operator,12,31871,2014-07-23,3,2
-Ishita Din,Operator,6,29761,2020-10-28,3,1
-Omisha Ramaswamy,Operator,0,25900,2026-08-02,3,2
-Ekanta Raval,Operator,8,28225,2018-03-23,3,2
-Liam Chawla,Operator,14,33385,2012-08-25,3,3
-Anthony Bedi,Operator,9,27810,2017-03-18,3,3
-Yagnesh Mani,Operator,3,28385,2023-12-10,3,1
-Neha Anne,Operator,4,25251,2022-07-10,3,2
-Falguni Ramesh,Operator,14,32155,2012-02-09,3,1
-Geetika Menon,Operator,7,28067,2019-08-27,3,3
-Nathan Batta,Operator,9,31377,2017-11-04,3,2
-Avni Chakraborty,Operator,9,30809,2017-10-18,3,1
-Yamini Mohan,Operator,12,31754,2014-11-10,3,1
-Pavani Dhar,Operator,8,27245,2018-03-25,3,3
-Udant Sani,Operator,4,25249,2022-07-13,3,3
-Frado Nanda,Operator,2,26554,2024-11-20,3,2
-Om Ghosh,Operator,3,27149,2023-06-12,3,2
-Qasim Oza,Operator,4,28189,2022-03-13,3,2
-Leena Contractor,Operator,6,26875,2020-10-19,3,2
-Lakshit Ranganathan,Technician,5,37631,2021-08-26,3,3
-Nathan Varghese,Technician,18,49066,2008-09-03,3,1
-Vrishti Kannan,Technician,4,35936,2022-04-26,3,3
-Balvan Kar,Technician,18,48905,2008-11-13,3,1
-Balvan Lala,Technician,10,40063,2016-09-24,3,1
-Jack Koshy,Technician,16,47207,2010-01-25,3,2
-Kamala Walia,Technician,10,41552,2016-04-11,3,1
-Kabir Gour,Technician,17,46157,2009-03-21,3,1
-Mugdha Basak,Technician,17,48639,2009-01-03,3,3
-Anusha Dube,Technician,15,45295,2011-09-21,3,3
-Finn Barad,Quality Inspector,9,45490,2017-12-07,3,2
-Yoshita Kale,Quality Inspector,6,44556,2020-05-24,3,1
-Ishanvi Rana,Quality Inspector,8,45685,2018-06-22,3,3
-Azaan Tandon,Quality Inspector,18,53145,2008-10-14,3,2
-Ryan Kamdar,Quality Inspector,13,51049,2013-04-08,3,3
-Chasmum Keer,Quality Inspector,5,45694,2021-05-04,3,1
-Yochana Kapadia,Maintenance Engineer,8,56881,2018-01-25,3,2
-Vivaan Pathak,Maintenance Engineer,14,63075,2012-04-13,3,2
-Wakeeta Iyer,Maintenance Engineer,8,59496,2018-03-09,3,1
-Zayan Yohannan,Supervisor,9,69719,2017-05-16,3,1
-Yadavi Som,Supervisor,22,84866,2004-03-04,3,2
-Ekantika Parmer,Supervisor,21,84404,2005-08-19,3,2
-Xavier Chana,Supervisor,14,76190,2012-04-11,3,1
-Naksh Pathak,Operator,13,29726,2013-02-05,4,3
-Urvashi Goswami,Operator,7,29455,2019-06-08,4,3
-Osha Balay,Operator,9,28633,2017-05-04,4,3
-Zilmil Seth,Operator,5,26237,2021-05-09,4,3
-Irya Khalsa,Operator,10,30068,2016-12-28,4,2
-Frederick Dube,Operator,12,31703,2014-06-01,4,2
-Aachal Bhatia,Operator,15,32231,2011-01-18,4,1
-Dipta Tara,Operator,13,33088,2013-07-18,4,1
-Jack Banik,Operator,0,26851,2026-12-07,4,3
-Rishi Contractor,Operator,10,28297,2016-09-14,4,3
-Madhav Jha,Operator,13,33362,2013-11-24,4,2
-Yug Sethi,Operator,10,29905,2016-12-20,4,1
-Mohammed Sandhu,Operator,5,27589,2021-03-08,4,1
-Urmi Srivastava,Operator,2,25935,2024-02-19,4,3
-Janani Rege,Operator,9,29694,2017-03-24,4,1
-Tanmayi Shah,Operator,15,34216,2011-10-19,4,2
-Ayush Kata,Operator,0,26201,2026-12-28,4,3
-Tripti Sachdev,Operator,12,31342,2014-01-13,4,2
-Urvashi Tailor,Operator,1,25177,2025-10-18,4,1
-Rehaan Babu,Operator,1,27382,2025-09-09,4,3
-Amruta Minhas,Operator,7,29833,2019-08-10,4,3
-Ekansh Anand,Operator,12,31304,2014-02-18,4,2
-Kavya Chahal,Operator,6,27837,2020-06-10,4,2
-Suhani Tella,Operator,1,25031,2025-07-12,4,2
-Rayaan Jayaraman,Operator,11,31104,2015-12-28,4,3
-Ayushman Din,Operator,4,28218,2022-01-21,4,2
-Isaiah Sandhu,Operator,15,31883,2011-03-22,4,2
-Kiaan Anand,Operator,2,25865,2024-03-13,4,2
-Sanaya Palla,Operator,7,28915,2019-07-06,4,2
-Yutika Bumb,Operator,3,25000,2023-01-24,4,2
-Yashvi Narayanan,Operator,11,28979,2015-07-11,4,2
-Urmi Dalal,Technician,2,37174,2024-09-13,4,3
-Harinakshi Sur,Technician,14,46070,2012-10-07,4,1
-Chakradev Parsa,Technician,13,43132,2013-02-15,4,2
-Nimrat Mishra,Technician,12,43077,2014-11-16,4,3
-Dakshesh Singhal,Technician,2,37897,2024-04-12,4,2
-Amruta Wable,Technician,4,36467,2022-06-06,4,2
-Divya Lata,Technician,8,38758,2018-11-12,4,3
-Balendra Saran,Technician,3,35698,2023-10-02,4,2
-Turvi Comar,Quality Inspector,15,53630,2011-12-20,4,2
-Ranveer Palla,Quality Inspector,19,54724,2007-12-18,4,1
-Ganga Seth,Quality Inspector,17,54199,2009-12-02,4,1
-Mitali Issac,Quality Inspector,15,50967,2011-09-21,4,1
-Gaurangi Lata,Quality Inspector,13,49720,2013-12-12,4,3
-Tanveer Thakur,Maintenance Engineer,9,58995,2017-01-08,4,3
-Amruta Khatri,Maintenance Engineer,5,56813,2021-01-13,4,3
-Aryan Ramanathan,Supervisor,11,74956,2015-09-04,4,2
-Harsh Brahmbhatt,Supervisor,20,82474,2006-05-23,4,1
-Aadhya Parsa,Supervisor,13,75738,2013-03-20,4,1
-Zayyan Wable,Operator,13,31573,2013-09-03,5,1
-Dalbir Sami,Operator,14,31531,2012-07-22,5,1
-Ranbir Ben,Operator,12,30528,2014-11-01,5,2
-Warjas Guha,Operator,0,25000,2026-07-17,5,2
-Chandani Devan,Operator,4,28205,2022-01-15,5,2
-Ojasvi Dasgupta,Operator,12,31625,2014-01-12,5,3
-Elijah De,Operator,8,28580,2018-03-08,5,1
-Sathvik Pingle,Operator,13,31600,2013-12-26,5,3
-Kashish Karan,Operator,7,26686,2019-10-28,5,2
-Siya Chatterjee,Operator,12,30020,2014-12-12,5,1
-Ekapad Bedi,Operator,1,25000,2025-08-12,5,1
-Harshil Samra,Operator,14,31420,2012-11-16,5,2
-David Raja,Operator,8,28388,2018-04-07,5,2
-Edhitha Thakkar,Operator,6,29926,2020-05-05,5,1
-Raksha Babu,Operator,4,27884,2022-03-13,5,3
-Lavanya Gopal,Operator,4,26897,2022-09-08,5,3
-Jeet Wable,Operator,2,25929,2024-04-07,5,1
-Shivani Bhatti,Operator,10,28023,2016-05-19,5,1
-Charvi Warrior,Operator,13,32006,2013-09-26,5,1
-Jeremiah Srinivas,Operator,14,33201,2012-06-25,5,1
-Zayan Varghese,Operator,4,27711,2022-10-26,5,3
-Gavin Joshi,Operator,12,32877,2014-12-05,5,2
-Radhika Wadhwa,Operator,8,30751,2018-08-19,5,3
-Jagvi Dey,Operator,4,26089,2022-01-03,5,1
-Radhika Borra,Technician,12,45274,2014-12-21,5,2
-Nathan Sabharwal,Technician,14,43480,2012-09-24,5,2
-Theodore Deep,Technician,16,45900,2010-06-12,5,1
-Ojas Manda,Technician,13,43615,2013-06-08,5,1
-Abha Prakash,Technician,6,39427,2020-12-22,5,3
-Fariq Narula,Technician,10,43008,2016-12-10,5,3
-Brinda Sachar,Technician,14,44920,2012-03-24,5,1
-Nakul Rege,Quality Inspector,4,42156,2022-08-05,5,1
-Hritik Gour,Quality Inspector,13,51408,2013-07-18,5,3
-Zehaan Vaidya,Quality Inspector,10,49116,2016-11-14,5,3
-Anthony Thaker,Quality Inspector,13,51253,2013-06-12,5,3
-Chaaya Bhargava,Maintenance Engineer,5,54019,2021-01-06,5,3
-Dayamai Wason,Maintenance Engineer,14,63832,2012-08-28,5,2
-Frado Bhasin,Supervisor,22,88323,2004-08-06,5,2
-Jalsa Rao,Supervisor,12,76272,2014-06-28,5,1
+employee_id,employee_name,designation,experience_years,salary,hire_date,factory_id,shift_id
+1,"Ira Mane","Plant Manager",16,121357.00,2010-04-10,1,1
+2,"Jai Sankar","Plant Manager",20,128958.00,2006-05-07,2,1
+3,"Yahvi Mitter","Plant Manager",21,128605.00,2005-08-06,3,1
+4,"Warhi Butala","Plant Manager",20,128672.00,2006-08-28,4,1
+5,"Vasatika Bhatt","Plant Manager",17,122049.00,2009-12-27,5,1
+6,"Ucchal Roy",Operator,4,27923.00,2022-02-05,1,3
+7,"Warjas Garg",Operator,0,26323.00,2026-11-13,1,2
+8,"Hema Dixit",Operator,3,27114.00,2023-02-21,1,1
+9,"Dhruv Sarraf",Operator,4,28585.00,2022-08-12,1,1
+10,"Pranav Pall",Operator,9,28294.00,2017-11-07,1,3
+11,"Yash Parikh",Operator,12,32251.00,2014-01-14,1,1
+12,"Manbir Patla",Operator,4,25442.00,2022-07-06,1,1
+13,"Om Bhakta",Operator,0,25677.00,2026-07-16,1,1
+14,"Harita Batra",Operator,5,27584.00,2021-03-18,1,2
+15,"Ayaan Luthra",Operator,3,27076.00,2023-04-25,1,2
+16,"Anjali Oak",Operator,15,33287.00,2011-07-11,1,1
+17,"Jackson Seshadri",Operator,9,30283.00,2017-05-07,1,1
+18,"Aadi Samra",Operator,1,27142.00,2025-06-16,1,1
+19,"Samar Rege",Operator,5,29376.00,2021-12-01,1,1
+20,"Oeshi Babu",Operator,8,27623.00,2018-11-03,1,3
+21,"Ayush Tata",Operator,10,28529.00,2016-11-05,1,1
+22,"Vritti Nath",Operator,11,32412.00,2015-07-16,1,1
+23,"Omkaar Roy",Operator,6,28818.00,2020-10-11,1,2
+24,"Lakshit Hayre",Operator,12,31199.00,2014-03-03,1,3
+25,"Ekta Bhavsar",Operator,12,32987.00,2014-11-18,1,2
+26,"Avni Patel",Operator,11,31827.00,2015-08-21,1,2
+27,"Udyati Garg",Operator,10,31076.00,2016-09-27,1,1
+28,"Falak Tank",Operator,2,25665.00,2024-01-11,1,1
+29,"Harita Tara",Operator,13,31678.00,2013-04-08,1,2
+30,"Nimrat Setty",Operator,4,25880.00,2022-03-03,1,1
+31,"Balendra Sur",Operator,15,31015.00,2011-06-07,1,2
+32,"Advik Barad",Operator,6,29148.00,2020-04-21,1,2
+33,"Harrison Kaur",Operator,12,31302.00,2014-09-09,1,3
+34,"Sachi Ghose",Operator,13,31607.00,2013-06-20,1,1
+35,"Qasim Raja",Operator,3,25254.00,2023-02-12,1,2
+36,"Tanvi Sama",Operator,3,26052.00,2023-07-22,1,1
+37,"Yashica Kannan",Operator,1,25100.00,2025-08-27,1,1
+38,"Lucky Jha",Operator,12,32602.00,2014-03-20,1,2
+39,"Reyansh Mohanty",Operator,2,26126.00,2024-08-22,1,2
+40,"Nimrat Ramanathan",Operator,10,29790.00,2016-09-10,1,1
+41,"Udyati Sha",Operator,11,32090.00,2015-02-17,1,3
+42,"Jack Mitter",Operator,13,32522.00,2013-05-25,1,3
+43,"Lakshit Barad",Operator,3,26821.00,2023-05-01,1,3
+44,"Rudra Shukla",Operator,3,28405.00,2023-05-19,1,3
+45,"Udarsh Chaudhry",Operator,2,25445.00,2024-02-10,1,1
+46,"Frederick Golla",Operator,6,26350.00,2020-09-16,1,1
+47,"Brinda Dora",Operator,14,30063.00,2012-08-25,1,1
+48,"Ikshita Patil",Operator,1,26321.00,2025-04-04,1,1
+49,"Chanakya Sandal",Operator,13,32261.00,2013-09-23,1,2
+50,"Leela Reddy",Operator,15,31047.00,2011-11-07,1,3
+51,"Rehaan Bath",Operator,9,31026.00,2017-12-18,1,1
+52,"Qadim Sathe",Operator,12,29596.00,2014-06-01,1,2
+53,"Ekavir Raghavan",Operator,13,31130.00,2013-11-19,1,3
+54,"Vedant Chaudhari",Technician,4,37759.00,2022-05-03,1,1
+55,"Rachana Sankar",Technician,6,41005.00,2020-03-24,1,1
+56,"Zayan Batta",Technician,18,48288.00,2008-09-17,1,2
+57,"Rudra Bhagat",Technician,6,37855.00,2020-02-19,1,2
+58,"Ranbir Parmar",Technician,8,42355.00,2018-06-25,1,1
+59,"Qarin Ghose",Technician,7,39482.00,2019-06-02,1,3
+60,"Caleb Behl",Technician,9,41464.00,2017-09-03,1,2
+61,"Teerth Borah",Technician,8,39104.00,2018-07-23,1,3
+62,"Quincy Natarajan",Technician,2,35000.00,2024-04-21,1,2
+63,"Yashvi Ray",Technician,7,40771.00,2019-01-03,1,1
+64,"Faqid Uppal",Technician,14,45295.00,2012-04-14,1,2
+65,"Balhaar Kota",Technician,12,43346.00,2014-02-05,1,1
+66,"Rachana Varughese",Technician,8,42466.00,2018-09-24,1,2
+67,"Nathaniel Khare","Quality Inspector",5,42655.00,2021-05-22,1,2
+68,"Upkaar Gupta","Quality Inspector",7,44857.00,2019-02-11,1,2
+69,"Kashvi Lad","Quality Inspector",4,42050.00,2022-08-16,1,1
+70,"Tristan Deep","Quality Inspector",11,50369.00,2015-02-19,1,1
+71,"Isaac Balasubramanian","Quality Inspector",19,56955.00,2007-03-12,1,1
+72,"Riya Thaman","Quality Inspector",11,48733.00,2015-02-07,1,2
+73,"Yashica Dugar","Quality Inspector",11,48646.00,2015-03-12,1,2
+74,"Gauri Iyengar","Quality Inspector",4,42289.00,2022-10-28,1,3
+75,"Guneet Dua","Maintenance Engineer",18,67436.00,2008-04-07,1,3
+76,"Ekanta Bhandari","Maintenance Engineer",5,53645.00,2021-08-27,1,3
+77,"Rachita De","Maintenance Engineer",8,58684.00,2018-11-10,1,2
+78,"Aryan Dey","Maintenance Engineer",16,64748.00,2010-05-18,1,1
+79,"Leena Kakar",Supervisor,8,67874.00,2018-03-24,1,2
+80,"Priya Chakraborty",Supervisor,22,87754.00,2004-09-28,1,1
+81,"Akshay Parmer",Supervisor,14,76591.00,2012-06-08,1,2
+82,"Maanas Ramachandran",Supervisor,11,71263.00,2015-08-05,1,2
+83,"Yoshita Patil",Supervisor,18,83404.00,2008-04-25,1,1
+84,"Zashil Babu",Supervisor,11,74797.00,2015-11-04,1,2
+85,"Lila Madan",Operator,12,30245.00,2014-06-19,2,1
+86,"Onveer Mammen",Operator,10,31110.00,2016-01-03,2,2
+87,"Adweta Doshi",Operator,1,26449.00,2025-08-20,2,1
+88,"Madhavi Krishnan",Operator,15,32440.00,2011-12-25,2,1
+89,"Faris Ratti",Operator,12,32682.00,2014-02-27,2,2
+90,"Bhavna Mody",Operator,10,29863.00,2016-03-07,2,3
+91,"Shravya Sangha",Operator,2,25000.00,2024-01-20,2,2
+92,"Unni Sharaf",Operator,9,28323.00,2017-11-01,2,3
+93,"Jason Thakur",Operator,2,25000.00,2024-02-13,2,3
+94,"Sanya Agrawal",Operator,15,32015.00,2011-04-04,2,2
+95,"Gayathri Bir",Operator,7,29592.00,2019-07-07,2,3
+96,"Chaitanya Lad",Operator,13,30569.00,2013-06-02,2,2
+97,"Om Shan",Operator,6,27330.00,2020-04-26,2,3
+98,"Nimrat Sidhu",Operator,2,26090.00,2024-09-02,2,1
+99,"Praneel Tripathi",Operator,8,29455.00,2018-12-09,2,2
+100,"Saksham Korpal",Operator,11,28993.00,2015-11-18,2,3
+101,"Veda Pillay",Operator,6,29438.00,2020-04-06,2,2
+102,"Upkaar Korpal",Operator,0,25301.00,2026-05-27,2,1
+103,"Ira Virk",Operator,7,26966.00,2019-04-15,2,2
+104,"Krishna De",Operator,1,26580.00,2025-02-16,2,1
+105,"Yahvi Gulati",Operator,1,25000.00,2025-11-17,2,1
+106,"Tanveer Sehgal",Operator,11,29655.00,2015-10-12,2,3
+107,"Samaksh Shere",Operator,8,28446.00,2018-04-04,2,2
+108,"Gunbir Mohanty",Operator,5,28110.00,2021-01-05,2,1
+109,"Jagvi Issac",Operator,2,25000.00,2024-06-28,2,2
+110,"Sai Sangha",Operator,5,26833.00,2021-05-09,2,3
+111,"Yashawini Mahajan",Operator,2,25317.00,2024-08-02,2,3
+112,"Vrishti Luthra",Operator,1,25549.00,2025-03-02,2,2
+113,"Bhavani Dara",Operator,5,26069.00,2021-01-06,2,1
+114,"Raghav Ganesan",Operator,7,27941.00,2019-06-18,2,2
+115,"Patrick Iyengar",Operator,10,30851.00,2016-10-21,2,3
+116,"Chanchal Das",Operator,8,28197.00,2018-04-10,2,2
+117,"Panini Roy",Operator,1,27043.00,2025-05-24,2,3
+118,"Krishna Choudhury",Operator,8,27064.00,2018-10-08,2,3
+119,"Umang Din",Operator,7,30331.00,2019-02-27,2,2
+120,"Jonathan Mahajan",Operator,13,32280.00,2013-07-04,2,2
+121,"Nicholas Dâ€™Alia",Operator,4,25500.00,2022-08-07,2,3
+122,"Yashvi Gopal",Operator,5,29185.00,2021-12-09,2,1
+123,"Balveer Wadhwa",Operator,9,31272.00,2017-10-04,2,3
+124,"Pahal Thakkar",Operator,9,27767.00,2017-07-18,2,2
+125,"Faqid Dhingra",Operator,1,26038.00,2025-05-26,2,3
+126,"Dayita Choudhary",Technician,10,43948.00,2016-03-21,2,1
+127,"Tristan Kannan",Technician,16,45282.00,2010-06-08,2,3
+128,"Laksh Jhaveri",Technician,11,43742.00,2015-01-18,2,1
+129,"Vivaan Vohra",Technician,6,41017.00,2020-10-06,2,3
+130,"Ethan Ganesh",Technician,7,37911.00,2019-09-27,2,2
+131,"Chakradev Palla",Technician,15,47431.00,2011-11-27,2,3
+132,"Lavanya Behl",Technician,14,42975.00,2012-03-07,2,3
+133,"Chavvi Deshpande",Technician,18,47789.00,2008-07-07,2,1
+134,"Onkar Ranganathan",Technician,11,41327.00,2015-01-09,2,2
+135,"Brinda Mani",Technician,13,42630.00,2013-02-12,2,3
+136,"Hemang Kunda",Technician,9,43287.00,2017-06-28,2,3
+137,"Aarnav Bir",Technician,14,44489.00,2012-02-06,2,2
+138,"Bakhshi Khurana","Quality Inspector",5,44267.00,2021-01-16,2,2
+139,"Pranav Hayre","Quality Inspector",19,56207.00,2007-03-04,2,2
+140,"Leela Chander","Quality Inspector",12,49515.00,2014-07-18,2,3
+141,"Aachal Dara","Quality Inspector",15,50851.00,2011-10-14,2,1
+142,"Unni Swamy","Quality Inspector",13,49939.00,2013-07-23,2,3
+143,"Avni Chander","Quality Inspector",12,48229.00,2014-02-11,2,3
+144,"Rachit Khanna","Quality Inspector",18,55083.00,2008-03-26,2,3
+145,"Mohini Wali","Maintenance Engineer",12,61191.00,2014-12-02,2,1
+146,"Thomas Bawa","Maintenance Engineer",15,64870.00,2011-11-19,2,3
+147,"Ikshita Pillai","Maintenance Engineer",18,69604.00,2008-04-19,2,2
+148,"Karan Khatri","Maintenance Engineer",11,61252.00,2015-04-12,2,2
+149,"Falan Talwar",Supervisor,13,76263.00,2013-09-23,2,2
+150,"Lakshmi Ramachandran",Supervisor,18,81347.00,2008-03-07,2,1
+151,"Meera Barad",Supervisor,23,89208.00,2003-02-17,2,1
+152,"Suhani Narain",Supervisor,11,72456.00,2015-10-02,2,2
+153,"Charvi Sule",Supervisor,13,76017.00,2013-07-07,2,2
+154,"Praneel Lad",Operator,3,26037.00,2023-12-07,3,1
+155,"Megha Dhawan",Operator,9,30128.00,2017-02-25,3,2
+156,"Yamini Edwin",Operator,9,28267.00,2017-11-10,3,2
+157,"Rachita Dubey",Operator,0,25000.00,2026-11-14,3,2
+158,"Balendra Padmanabhan",Operator,12,29648.00,2014-08-19,3,1
+159,"Vedant Sachdeva",Operator,4,25664.00,2022-02-04,3,1
+160,"Oscar Nagi",Operator,0,25000.00,2026-05-27,3,1
+161,"Meera Halder",Operator,7,30307.00,2019-12-18,3,3
+162,"Darsh Subramanian",Operator,0,25055.00,2026-03-02,3,2
+163,"Ekani Nazareth",Operator,13,30705.00,2013-02-04,3,1
+164,"Vedant Loke",Operator,12,29840.00,2014-03-22,3,2
+165,"Robert Randhawa",Operator,4,27233.00,2022-11-06,3,3
+166,"Victor Banerjee",Operator,11,29617.00,2015-05-01,3,3
+167,"Hitesh Thaker",Operator,15,31808.00,2011-01-13,3,2
+168,"Ijaya Kuruvilla",Operator,6,28175.00,2020-04-08,3,2
+169,"Jalsa Dave",Operator,1,25077.00,2025-06-13,3,2
+170,"Champak Sem",Operator,10,30565.00,2016-06-27,3,2
+171,"Aarna Kulkarni",Operator,12,31871.00,2014-07-23,3,2
+172,"Ishita Din",Operator,6,29761.00,2020-10-28,3,1
+173,"Omisha Ramaswamy",Operator,0,25900.00,2026-08-02,3,2
+174,"Ekanta Raval",Operator,8,28225.00,2018-03-23,3,2
+175,"Liam Chawla",Operator,14,33385.00,2012-08-25,3,3
+176,"Anthony Bedi",Operator,9,27810.00,2017-03-18,3,3
+177,"Yagnesh Mani",Operator,3,28385.00,2023-12-10,3,1
+178,"Neha Anne",Operator,4,25251.00,2022-07-10,3,2
+179,"Falguni Ramesh",Operator,14,32155.00,2012-02-09,3,1
+180,"Geetika Menon",Operator,7,28067.00,2019-08-27,3,3
+181,"Nathan Batta",Operator,9,31377.00,2017-11-04,3,2
+182,"Avni Chakraborty",Operator,9,30809.00,2017-10-18,3,1
+183,"Yamini Mohan",Operator,12,31754.00,2014-11-10,3,1
+184,"Pavani Dhar",Operator,8,27245.00,2018-03-25,3,3
+185,"Udant Sani",Operator,4,25249.00,2022-07-13,3,3
+186,"Frado Nanda",Operator,2,26554.00,2024-11-20,3,2
+187,"Om Ghosh",Operator,3,27149.00,2023-06-12,3,2
+188,"Qasim Oza",Operator,4,28189.00,2022-03-13,3,2
+189,"Leena Contractor",Operator,6,26875.00,2020-10-19,3,2
+190,"Lakshit Ranganathan",Technician,5,37631.00,2021-08-26,3,3
+191,"Nathan Varghese",Technician,18,49066.00,2008-09-03,3,1
+192,"Vrishti Kannan",Technician,4,35936.00,2022-04-26,3,3
+193,"Balvan Kar",Technician,18,48905.00,2008-11-13,3,1
+194,"Balvan Lala",Technician,10,40063.00,2016-09-24,3,1
+195,"Jack Koshy",Technician,16,47207.00,2010-01-25,3,2
+196,"Kamala Walia",Technician,10,41552.00,2016-04-11,3,1
+197,"Kabir Gour",Technician,17,46157.00,2009-03-21,3,1
+198,"Mugdha Basak",Technician,17,48639.00,2009-01-03,3,3
+199,"Anusha Dube",Technician,15,45295.00,2011-09-21,3,3
+200,"Finn Barad","Quality Inspector",9,45490.00,2017-12-07,3,2
+201,"Yoshita Kale","Quality Inspector",6,44556.00,2020-05-24,3,1
+202,"Ishanvi Rana","Quality Inspector",8,45685.00,2018-06-22,3,3
+203,"Azaan Tandon","Quality Inspector",18,53145.00,2008-10-14,3,2
+204,"Ryan Kamdar","Quality Inspector",13,51049.00,2013-04-08,3,3
+205,"Chasmum Keer","Quality Inspector",5,45694.00,2021-05-04,3,1
+206,"Yochana Kapadia","Maintenance Engineer",8,56881.00,2018-01-25,3,2
+207,"Vivaan Pathak","Maintenance Engineer",14,63075.00,2012-04-13,3,2
+208,"Wakeeta Iyer","Maintenance Engineer",8,59496.00,2018-03-09,3,1
+209,"Zayan Yohannan",Supervisor,9,69719.00,2017-05-16,3,1
+210,"Yadavi Som",Supervisor,22,84866.00,2004-03-04,3,2
+211,"Ekantika Parmer",Supervisor,21,84404.00,2005-08-19,3,2
+212,"Xavier Chana",Supervisor,14,76190.00,2012-04-11,3,1
+213,"Naksh Pathak",Operator,13,29726.00,2013-02-05,4,3
+214,"Urvashi Goswami",Operator,7,29455.00,2019-06-08,4,3
+215,"Osha Balay",Operator,9,28633.00,2017-05-04,4,3
+216,"Zilmil Seth",Operator,5,26237.00,2021-05-09,4,3
+217,"Irya Khalsa",Operator,10,30068.00,2016-12-28,4,2
+218,"Frederick Dube",Operator,12,31703.00,2014-06-01,4,2
+219,"Aachal Bhatia",Operator,15,32231.00,2011-01-18,4,1
+220,"Dipta Tara",Operator,13,33088.00,2013-07-18,4,1
+221,"Jack Banik",Operator,0,26851.00,2026-12-07,4,3
+222,"Rishi Contractor",Operator,10,28297.00,2016-09-14,4,3
+223,"Madhav Jha",Operator,13,33362.00,2013-11-24,4,2
+224,"Yug Sethi",Operator,10,29905.00,2016-12-20,4,1
+225,"Mohammed Sandhu",Operator,5,27589.00,2021-03-08,4,1
+226,"Urmi Srivastava",Operator,2,25935.00,2024-02-19,4,3
+227,"Janani Rege",Operator,9,29694.00,2017-03-24,4,1
+228,"Tanmayi Shah",Operator,15,34216.00,2011-10-19,4,2
+229,"Ayush Kata",Operator,0,26201.00,2026-12-28,4,3
+230,"Tripti Sachdev",Operator,12,31342.00,2014-01-13,4,2
+231,"Urvashi Tailor",Operator,1,25177.00,2025-10-18,4,1
+232,"Rehaan Babu",Operator,1,27382.00,2025-09-09,4,3
+233,"Amruta Minhas",Operator,7,29833.00,2019-08-10,4,3
+234,"Ekansh Anand",Operator,12,31304.00,2014-02-18,4,2
+235,"Kavya Chahal",Operator,6,27837.00,2020-06-10,4,2
+236,"Suhani Tella",Operator,1,25031.00,2025-07-12,4,2
+237,"Rayaan Jayaraman",Operator,11,31104.00,2015-12-28,4,3
+238,"Ayushman Din",Operator,4,28218.00,2022-01-21,4,2
+239,"Isaiah Sandhu",Operator,15,31883.00,2011-03-22,4,2
+240,"Kiaan Anand",Operator,2,25865.00,2024-03-13,4,2
+241,"Sanaya Palla",Operator,7,28915.00,2019-07-06,4,2
+242,"Yutika Bumb",Operator,3,25000.00,2023-01-24,4,2
+243,"Yashvi Narayanan",Operator,11,28979.00,2015-07-11,4,2
+244,"Urmi Dalal",Technician,2,37174.00,2024-09-13,4,3
+245,"Harinakshi Sur",Technician,14,46070.00,2012-10-07,4,1
+246,"Chakradev Parsa",Technician,13,43132.00,2013-02-15,4,2
+247,"Nimrat Mishra",Technician,12,43077.00,2014-11-16,4,3
+248,"Dakshesh Singhal",Technician,2,37897.00,2024-04-12,4,2
+249,"Amruta Wable",Technician,4,36467.00,2022-06-06,4,2
+250,"Divya Lata",Technician,8,38758.00,2018-11-12,4,3
+251,"Balendra Saran",Technician,3,35698.00,2023-10-02,4,2
+252,"Turvi Comar","Quality Inspector",15,53630.00,2011-12-20,4,2
+253,"Ranveer Palla","Quality Inspector",19,54724.00,2007-12-18,4,1
+254,"Ganga Seth","Quality Inspector",17,54199.00,2009-12-02,4,1
+255,"Mitali Issac","Quality Inspector",15,50967.00,2011-09-21,4,1
+256,"Gaurangi Lata","Quality Inspector",13,49720.00,2013-12-12,4,3
+257,"Tanveer Thakur","Maintenance Engineer",9,58995.00,2017-01-08,4,3
+258,"Amruta Khatri","Maintenance Engineer",5,56813.00,2021-01-13,4,3
+259,"Aryan Ramanathan",Supervisor,11,74956.00,2015-09-04,4,2
+260,"Harsh Brahmbhatt",Supervisor,20,82474.00,2006-05-23,4,1
+261,"Aadhya Parsa",Supervisor,13,75738.00,2013-03-20,4,1
+262,"Zayyan Wable",Operator,13,31573.00,2013-09-03,5,1
+263,"Dalbir Sami",Operator,14,31531.00,2012-07-22,5,1
+264,"Ranbir Ben",Operator,12,30528.00,2014-11-01,5,2
+265,"Warjas Guha",Operator,0,25000.00,2026-07-17,5,2
+266,"Chandani Devan",Operator,4,28205.00,2022-01-15,5,2
+267,"Ojasvi Dasgupta",Operator,12,31625.00,2014-01-12,5,3
+268,"Elijah De",Operator,8,28580.00,2018-03-08,5,1
+269,"Sathvik Pingle",Operator,13,31600.00,2013-12-26,5,3
+270,"Kashish Karan",Operator,7,26686.00,2019-10-28,5,2
+271,"Siya Chatterjee",Operator,12,30020.00,2014-12-12,5,1
+272,"Ekapad Bedi",Operator,1,25000.00,2025-08-12,5,1
+273,"Harshil Samra",Operator,14,31420.00,2012-11-16,5,2
+274,"David Raja",Operator,8,28388.00,2018-04-07,5,2
+275,"Edhitha Thakkar",Operator,6,29926.00,2020-05-05,5,1
+276,"Raksha Babu",Operator,4,27884.00,2022-03-13,5,3
+277,"Lavanya Gopal",Operator,4,26897.00,2022-09-08,5,3
+278,"Jeet Wable",Operator,2,25929.00,2024-04-07,5,1
+279,"Shivani Bhatti",Operator,10,28023.00,2016-05-19,5,1
+280,"Charvi Warrior",Operator,13,32006.00,2013-09-26,5,1
+281,"Jeremiah Srinivas",Operator,14,33201.00,2012-06-25,5,1
+282,"Zayan Varghese",Operator,4,27711.00,2022-10-26,5,3
+283,"Gavin Joshi",Operator,12,32877.00,2014-12-05,5,2
+284,"Radhika Wadhwa",Operator,8,30751.00,2018-08-19,5,3
+285,"Jagvi Dey",Operator,4,26089.00,2022-01-03,5,1
+286,"Radhika Borra",Technician,12,45274.00,2014-12-21,5,2
+287,"Nathan Sabharwal",Technician,14,43480.00,2012-09-24,5,2
+288,"Theodore Deep",Technician,16,45900.00,2010-06-12,5,1
+289,"Ojas Manda",Technician,13,43615.00,2013-06-08,5,1
+290,"Abha Prakash",Technician,6,39427.00,2020-12-22,5,3
+291,"Fariq Narula",Technician,10,43008.00,2016-12-10,5,3
+292,"Brinda Sachar",Technician,14,44920.00,2012-03-24,5,1
+293,"Nakul Rege","Quality Inspector",4,42156.00,2022-08-05,5,1
+294,"Hritik Gour","Quality Inspector",13,51408.00,2013-07-18,5,3
+295,"Zehaan Vaidya","Quality Inspector",10,49116.00,2016-11-14,5,3
+296,"Anthony Thaker","Quality Inspector",13,51253.00,2013-06-12,5,3
+297,"Chaaya Bhargava","Maintenance Engineer",5,54019.00,2021-01-06,5,3
+298,"Dayamai Wason","Maintenance Engineer",14,63832.00,2012-08-28,5,2
+299,"Frado Bhasin",Supervisor,22,88323.00,2004-08-06,5,2
+300,"Jalsa Rao",Supervisor,12,76272.00,2014-06-28,5,1

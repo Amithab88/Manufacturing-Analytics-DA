@@ -1,4 +1,4 @@
-shift_name,start_time,end_time
-Morning,06:00:00,14:00:00
-Afternoon,14:00:00,22:00:00
-Night,22:00:00,06:00:00
+shift_id,shift_name,start_time,end_time
+1,Morning,06:00:00,14:00:00
+2,Afternoon,14:00:00,22:00:00
+3,Night,22:00:00,06:00:00
