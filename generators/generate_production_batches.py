@@ -111,9 +111,7 @@ machines_df["installation_date"] = pd.to_datetime(
 # ----------------------------------------------------------
 
 eligible_designations = [
-    "Operator",
-    "Technician",
-    "Supervisor"
+    "Operator"
 ]
 
 eligible_employees = employees_df[
@@ -476,3 +474,75 @@ for i in range(10):
     assert batch["production_hours"] > 0
 
 print("✓ Generator validation passed.")
+
+# ==========================================================
+# Generate Production Batches
+# ==========================================================
+
+print("\nGenerating production batches...")
+
+production_batches = []
+
+for _ in range(TOTAL_BATCHES):
+
+    production_batches.append(
+        generate_batch()
+    )
+
+print("✓ Batch generation completed.")
+
+# ==========================================================
+# Convert to DataFrame
+# ==========================================================
+
+production_df = pd.DataFrame(production_batches)
+
+# ==========================================================
+# Arrange Columns
+# ==========================================================
+
+production_df = production_df[
+    [
+        "production_date",
+        "machine_id",
+        "employee_id",
+        "product_id",
+        "shift_id",
+        "units_produced",
+        "defective_units",
+        "production_hours"
+    ]
+]
+
+# ==========================================================
+# Export CSV
+# ==========================================================
+
+output_file = os.path.join(
+    BASE_DATA_PATH,
+    "production_batches.csv"
+)
+
+production_df.to_csv(
+    output_file,
+    index=False
+)
+
+# ==========================================================
+# Final Summary
+# ==========================================================
+
+print("\n" + "=" * 60)
+print("PRODUCTION BATCH GENERATION COMPLETED")
+print("=" * 60)
+
+print(f"Total Batches Generated : {len(production_df):,}")
+print(f"Machines Used           : {production_df['machine_id'].nunique()}")
+print(f"Employees Used          : {production_df['employee_id'].nunique()}")
+print(f"Products Produced       : {production_df['product_id'].nunique()}")
+print(f"Date Range              : {START_DATE} to {END_DATE}")
+print(f"Output File             : {output_file}")
+
+print("=" * 60)
+print("CSV READY FOR MYSQL IMPORT")
+print("=" * 60)
