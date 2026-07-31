@@ -1,0 +1,9 @@
+from database.db_connection import get_connection
+
+connection = get_connection()
+
+if connection:
+    print("✅ Database connection successful!")
+    connection.close()
+else:
+    print("❌ Database connection failed!")
