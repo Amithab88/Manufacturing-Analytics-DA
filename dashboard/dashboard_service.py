@@ -42,3 +42,7 @@ class DashboardService:
     @staticmethod
     def monthly_production():
         return TrendAnalytics.monthly_production()
+
+    @staticmethod
+    def factory_summary():
+        return FactoryAnalytics.factory_production()
