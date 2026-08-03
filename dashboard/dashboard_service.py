@@ -1,9 +1,16 @@
+import sys
+from pathlib import Path
+
+project_root = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_root))
+
 from analytics.production import ProductionAnalytics
 from analytics.factories import FactoryAnalytics
 from analytics.machines import MachineAnalytics
 from analytics.quality import QualityAnalytics
 from analytics.employees import EmployeeAnalytics
 from analytics.trends import TrendAnalytics
+
 
 
 class DashboardService:
