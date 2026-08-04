@@ -24,3 +24,27 @@ def factory_production_chart(df):
     )
 
     return fig
+
+import plotly.express as px
+
+
+def machine_status_chart(df):
+    fig = px.pie(
+        df,
+        names="status",
+         values="total_machines",
+        hole=0.55,
+        title="Machine Status Distribution"
+    )
+
+    fig.update_traces(
+        textinfo="percent+label"
+    )
+
+    fig.update_layout(
+        height=500,
+        legend_title="Status"
+    )
+
+
+    return fig

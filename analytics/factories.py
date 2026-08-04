@@ -14,7 +14,7 @@ class FactoryAnalytics:
         query = """
         SELECT
             f.factory_id,
-            f.factory_name,
+            REPLACE(f.factory_name, ' Manufacturing Plant', '') AS factory_name,
             COUNT(pb.production_id) AS total_batches,
             SUM(pb.units_produced) AS total_units_produced,
             SUM(pb.defective_units) AS total_defective_units,
@@ -47,7 +47,7 @@ class FactoryAnalytics:
         query = """
         SELECT
             f.factory_id,
-            f.factory_name,
+           REPLACE(f.factory_name, ' Manufacturing Plant', '') AS factory_name,
             COUNT(m.machine_id) AS total_machines
         FROM factories f
         LEFT JOIN machines m
@@ -71,7 +71,7 @@ class FactoryAnalytics:
         query = """
         SELECT
             f.factory_id,
-            f.factory_name,
+            REPLACE(f.factory_name, ' Manufacturing Plant', '') AS factory_name,
             COUNT(e.employee_id) AS total_employees
         FROM factories f
         LEFT JOIN employees e
@@ -94,7 +94,7 @@ class FactoryAnalytics:
 
         query = """
         SELECT
-            f.factory_name,
+            REPLACE(f.factory_name, ' Manufacturing Plant', '') AS factory_name,
             COUNT(DISTINCT m.machine_id) AS total_machines,
             COUNT(DISTINCT e.employee_id) AS total_employees,
             COUNT(pb.production_id) AS total_batches,

@@ -8,7 +8,7 @@ sys.path.append(str(project_root))
 
 from dashboard_service import DashboardService
 from components import metric_card
-from charts import factory_production_chart
+from charts import factory_production_chart, machine_status_chart
 
 st.set_page_config(
     page_title="Manufacturing Analytics Dashboard",
@@ -54,14 +54,26 @@ with col4:
     )
 
 st.markdown(load_css(), unsafe_allow_html=True)
+
 st.markdown("---")
 
-st.markdown("## Factory Production")
+col1, col2 = st.columns(2)
 
-factory_df = DashboardService.factory_summary()
+with col1:
+    st.markdown("## Factory Production")
 
-fig = factory_production_chart(factory_df)
+    factory_df = DashboardService.factory_summary()
 
-st.plotly_chart(fig, use_container_width=True)
+    fig = factory_production_chart(factory_df)
 
-#style the chart
+    st.plotly_chart(fig, use_container_width=True)
+
+with col2:
+    st.markdown("## Machine Status")
+
+    machine_df = DashboardService.machine_status()
+
+    fig = machine_status_chart(machine_df)
+
+    st.plotly_chart(fig, use_container_width=True)
+
