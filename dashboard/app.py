@@ -1,6 +1,7 @@
 import streamlit as st
 import sys
 from pathlib import Path
+from styles import load_css
 
 project_root = Path(__file__).resolve().parent.parent
 sys.path.append(str(project_root))
@@ -16,6 +17,10 @@ st.set_page_config(
 )
 
 st.title("🏭 Manufacturing Analytics Dashboard")
+
+st.caption(
+    "Executive overview of production, quality, machines, factories, and workforce performance."
+)
 st.markdown("---")
 
 summary = DashboardService.production_summary()
@@ -48,12 +53,15 @@ with col4:
         round(summary["avg_production_hours"],2)
     )
 
+st.markdown(load_css(), unsafe_allow_html=True)
 st.markdown("---")
 
-st.subheader("🏭 Factory-wise Production")
+st.markdown("## Factory Production")
 
 factory_df = DashboardService.factory_summary()
 
 fig = factory_production_chart(factory_df)
 
 st.plotly_chart(fig, use_container_width=True)
+
+#style the chart
