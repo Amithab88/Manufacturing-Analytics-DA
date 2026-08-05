@@ -46,3 +46,11 @@ class DashboardService:
     @staticmethod
     def factory_summary():
         return FactoryAnalytics.factory_production()
+
+    @staticmethod
+    def monthly_defects():
+        return TrendAnalytics.monthly_defects()
+
+    @staticmethod
+    def top_employees():
+        return EmployeeAnalytics.top_employees()

@@ -1,3 +1,5 @@
+from multiprocessing import connection
+
 import pandas as pd
 from database.db_connection import get_connection
 
@@ -100,3 +102,28 @@ class EmployeeAnalytics:
         df = pd.read_sql(query, connection)
         connection.close()
         return df
+
+    @staticmethod
+    def top_employees(limit=10):
+        connection = get_connection()
+        query = f"""
+        SELECT
+            e.employee_name,
+            e.designation,
+            COUNT(pb.production_id) AS total_batches,
+            SUM(pb.units_produced) AS total_units
+        FROM employees e
+        JOIN production_batches pb
+            ON e.employee_id = pb.employee_id
+        GROUP BY
+            e.employee_id,
+            e.employee_name,
+            e.designation
+        ORDER BY total_units DESC
+        LIMIT {limit};
+        """
+        df = pd.read_sql(query, connection)
+        connection.close()
+        return df
+
+        

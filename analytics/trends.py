@@ -96,3 +96,20 @@ class TrendAnalytics:
         df = pd.read_sql(query, connection)
         connection.close()
         return df
+
+    @staticmethod
+    def monthly_defects():
+        connection = get_connection()
+
+        query = """
+        SELECT
+            DATE_FORMAT(production_date,'%Y-%m') AS month,
+            SUM(defective_units) AS total_defects
+        FROM production_batches
+        GROUP BY month
+        ORDER BY month;
+        """
+
+        df = pd.read_sql(query, connection)
+        connection.close()
+        return df

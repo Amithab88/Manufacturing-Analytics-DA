@@ -8,7 +8,12 @@ sys.path.append(str(project_root))
 
 from dashboard_service import DashboardService
 from components import metric_card
-from charts import factory_production_chart, machine_status_chart
+from charts import (
+    factory_production_chart,
+    machine_status_chart,
+    monthly_production_chart,
+    monthly_defect_chart
+)
 
 st.set_page_config(
     page_title="Manufacturing Analytics Dashboard",
@@ -77,3 +82,36 @@ with col2:
 
     st.plotly_chart(fig, use_container_width=True)
 
+st.markdown("---")
+
+col3, col4 = st.columns(2)
+
+with col3:
+    st.markdown("## Monthly Production Trend")
+
+    trend_df = DashboardService.monthly_production()
+
+    fig = monthly_production_chart(trend_df)
+
+    st.plotly_chart(fig, use_container_width=True)
+
+with col4:
+    st.markdown("## Monthly Defect Trend")
+
+    defect_df = DashboardService.monthly_defects()
+
+    fig = monthly_defect_chart(defect_df)
+
+    st.plotly_chart(fig, use_container_width=True)
+
+st.markdown("---")
+
+st.markdown("## 🏆 Top Performing Employees")
+
+employee_df = DashboardService.top_employees()
+
+st.dataframe(
+    employee_df,
+    use_container_width=True,
+    hide_index=True
+)

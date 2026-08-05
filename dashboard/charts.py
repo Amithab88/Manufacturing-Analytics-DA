@@ -48,3 +48,37 @@ def machine_status_chart(df):
 
 
     return fig
+
+def monthly_production_chart(df):
+    fig = px.line(
+        df,
+        x="month",
+        y="total_units",
+        markers=True,
+        title="Monthly Production Trend"
+    )
+
+    fig.update_layout(
+        height=450,
+        xaxis_title="Month",
+        yaxis_title="Units Produced"
+    )
+
+    return fig
+
+def monthly_defect_chart(df):
+    fig = px.line(
+        df,
+        x="month",
+        y="total_defects",
+        markers=True,
+        title="Monthly Defect Trend"
+    )
+
+    fig.update_layout(
+        height=450,
+        xaxis_title="Month",
+        yaxis_title="Defective Units"
+    )
+
+    return fig
