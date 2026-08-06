@@ -130,7 +130,8 @@ with col1:
 
     st.subheader("🏭 Factory Production")
 
-    factory_df = DashboardService.factory_summary()
+    factory_df = DashboardService.factory_summary(selected_factory)
+
 
     factory_fig = factory_production_chart(factory_df)
 

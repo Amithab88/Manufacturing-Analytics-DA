@@ -3,13 +3,11 @@ import plotly.express as px
 
 def factory_production_chart(df):
     fig = px.bar(
-        df,
-        x="factory_name",
-        y="total_units_produced",
-        color="factory_name",
-        title="Factory-wise Production",
-        text="total_units_produced"
-    )
+    df,
+    x="factory_name",
+    y="total_units_produced",
+    text="total_units_produced"
+)
 
     fig.update_layout(
         xaxis_title="Factory",
@@ -24,9 +22,6 @@ def factory_production_chart(df):
     )
 
     return fig
-
-import plotly.express as px
-
 
 def machine_status_chart(df):
     fig = px.pie(

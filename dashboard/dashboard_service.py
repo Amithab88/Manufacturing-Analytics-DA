@@ -44,8 +44,8 @@ class DashboardService:
         return TrendAnalytics.monthly_production()
 
     @staticmethod
-    def factory_summary():
-        return FactoryAnalytics.factory_production()
+    def factory_summary(factory="All"):
+        return FactoryAnalytics.factory_production(factory)
 
     @staticmethod
     def monthly_defects():
@@ -58,3 +58,5 @@ class DashboardService:
     @staticmethod
     def get_factory_names():
         return FactoryAnalytics.get_factory_names()
+
+   
