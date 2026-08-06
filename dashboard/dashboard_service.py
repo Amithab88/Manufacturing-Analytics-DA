@@ -54,3 +54,7 @@ class DashboardService:
     @staticmethod
     def top_employees():
         return EmployeeAnalytics.top_employees()
+
+    @staticmethod
+    def get_factory_names():
+        return FactoryAnalytics.get_factory_names()

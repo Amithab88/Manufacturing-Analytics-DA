@@ -120,3 +120,15 @@ class FactoryAnalytics:
         connection.close()
 
         return df
+
+    @staticmethod
+    def get_factory_names():
+        connection = get_connection()
+        query = """
+        SELECT factory_name
+        FROM factories
+        ORDER BY factory_name;
+        """
+        df = pd.read_sql(query, connection)
+        connection.close()
+        return df["factory_name"].tolist()

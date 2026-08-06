@@ -39,14 +39,7 @@ st.sidebar.markdown("---")
 
 st.sidebar.header("Filters")
 
-factory_options = [
-    "All",
-    "Chennai",
-    "Hosur",
-    "Bengaluru",
-    "Pune",
-    "Ahmedabad"
-]
+factory_options = ["All"] + DashboardService.get_factory_names()
 
 selected_factory = st.sidebar.selectbox(
     "Select Factory",
