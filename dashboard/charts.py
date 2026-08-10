@@ -77,3 +77,29 @@ def monthly_defect_chart(df):
     )
 
     return fig
+
+def top_employees_chart(df):
+    fig = px.bar(
+        df,
+        x="total_units",
+        y="employee_name",
+        orientation="h",
+        text="total_units"
+    )
+
+    fig.update_layout(
+        height=500,
+        xaxis_title="Units Produced",
+        yaxis_title="Employee",
+        yaxis=dict(
+            categoryorder="total ascending"
+        ),
+        showlegend=False
+    )
+
+    fig.update_traces(
+        texttemplate="%{text:,}",
+        textposition="outside"
+    )
+
+    return fig

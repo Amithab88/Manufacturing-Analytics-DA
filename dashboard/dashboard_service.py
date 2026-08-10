@@ -12,7 +12,6 @@ from analytics.employees import EmployeeAnalytics
 from analytics.trends import TrendAnalytics
 
 
-
 class DashboardService:
 
     @staticmethod
@@ -20,8 +19,8 @@ class DashboardService:
         return ProductionAnalytics.get_summary()
 
     @staticmethod
-    def factory_summary():
-        return FactoryAnalytics.factory_production()
+    def factory_summary(factory="All"):
+        return FactoryAnalytics.factory_production(factory)
 
     @staticmethod
     def machine_status():
@@ -36,27 +35,25 @@ class DashboardService:
         return QualityAnalytics.quality_summary()
 
     @staticmethod
-    def employee_summary():
-        return EmployeeAnalytics.employee_production()
+    def employee_summary(factory="All"):
+        return EmployeeAnalytics.employee_production(factory)
 
     @staticmethod
     def monthly_production():
         return TrendAnalytics.monthly_production()
 
     @staticmethod
-    def factory_summary(factory="All"):
-        return FactoryAnalytics.factory_production(factory)
-
-    @staticmethod
     def monthly_defects():
         return TrendAnalytics.monthly_defects()
 
     @staticmethod
-    def top_employees():
-        return EmployeeAnalytics.top_employees()
+    def top_employees(factory="All"):
+        return EmployeeAnalytics.top_employees(factory=factory)
 
     @staticmethod
     def get_factory_names():
         return FactoryAnalytics.get_factory_names()
 
-   
+    @staticmethod
+    def shift_performance(shift="All"):
+        return EmployeeAnalytics.shift_performance(shift)
