@@ -121,7 +121,9 @@ st.markdown("---")
 # KPI CARDS
 # -------------------------------------------------
 
-summary = DashboardService.production_summary().iloc[0]
+summary = DashboardService.production_summary(
+    selected_factory
+).iloc[0]
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -162,7 +164,8 @@ st.markdown("---")
 st.subheader("🕐 Shift Performance")
 
 shift_df = DashboardService.shift_performance(
-    selected_shift
+    selected_shift,
+    selected_factory
 )
 
 st.dataframe(
@@ -205,8 +208,9 @@ with col2:
 
     st.subheader("⚙ Machine Status")
 
-    machine_df = DashboardService.machine_status()
-
+    machine_df = DashboardService.machine_status(
+        selected_factory
+    )
     machine_fig = machine_status_chart(
         machine_df
     )
@@ -231,7 +235,9 @@ with col3:
 
     st.subheader("📈 Monthly Production")
 
-    trend_df = DashboardService.monthly_production()
+    trend_df = DashboardService.monthly_production(
+        selected_factory
+    )
 
     trend_fig = monthly_production_chart(
         trend_df
@@ -248,7 +254,9 @@ with col4:
 
     st.subheader("📉 Monthly Defect Trend")
 
-    defect_df = DashboardService.monthly_defects()
+    defect_df = DashboardService.monthly_defects(
+        selected_factory
+    )
 
     defect_fig = monthly_defect_chart(
         defect_df
@@ -269,7 +277,12 @@ st.markdown("---")
 st.subheader("🏆 Top Performing Employees")
 
 employee_df = DashboardService.top_employees(
-    factory=selected_factory
+    selected_factory
+)
+st.dataframe(
+    employee_df,
+    use_container_width=True,
+    hide_index=True
 )
 
 col1, col2 = st.columns(2)

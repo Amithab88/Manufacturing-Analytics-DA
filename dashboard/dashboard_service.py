@@ -15,45 +15,60 @@ from analytics.trends import TrendAnalytics
 class DashboardService:
 
     @staticmethod
-    def production_summary():
-        return ProductionAnalytics.get_summary()
+    def production_summary(factory="All"):
+        return ProductionAnalytics.get_summary(factory)
+
 
     @staticmethod
     def factory_summary(factory="All"):
         return FactoryAnalytics.factory_production(factory)
 
+
     @staticmethod
-    def machine_status():
-        return MachineAnalytics.machine_status()
+    def machine_status(factory="All"):
+        return MachineAnalytics.machine_status(factory)
+
 
     @staticmethod
     def machine_count():
         return MachineAnalytics.factory_machine_count()
 
+
     @staticmethod
     def quality_summary():
         return QualityAnalytics.quality_summary()
 
-    @staticmethod
-    def employee_summary(factory="All"):
-        return EmployeeAnalytics.employee_production(factory)
 
     @staticmethod
-    def monthly_production():
-        return TrendAnalytics.monthly_production()
+    def employee_summary():
+        return EmployeeAnalytics.employee_production()
+
 
     @staticmethod
-    def monthly_defects():
-        return TrendAnalytics.monthly_defects()
+    def monthly_production(factory="All"):
+        return TrendAnalytics.monthly_production(factory)
+
+
+    @staticmethod
+    def monthly_defects(factory="All"):
+        return TrendAnalytics.monthly_defects(factory)
+
 
     @staticmethod
     def top_employees(factory="All"):
-        return EmployeeAnalytics.top_employees(factory=factory)
+        return EmployeeAnalytics.top_employees(
+            factory=factory
+        )
+
+
+    @staticmethod
+    def shift_performance(shift="All", factory="All"):
+        return EmployeeAnalytics.shift_performance(
+            shift,
+            factory
+        )
+
 
     @staticmethod
     def get_factory_names():
         return FactoryAnalytics.get_factory_names()
-
-    @staticmethod
-    def shift_performance(shift="All"):
-        return EmployeeAnalytics.shift_performance(shift)

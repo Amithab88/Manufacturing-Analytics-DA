@@ -1,115 +1,374 @@
+# analytics/trends.py
+
 import pandas as pd
 from database.db_connection import get_connection
-
 
 class TrendAnalytics:
 
     @staticmethod
-    def daily_production():
+    def daily_production(factory="All"):
         connection = get_connection()
 
-        query = """
-        SELECT
-            production_date,
-            SUM(units_produced) AS total_units
-        FROM production_batches
-        GROUP BY production_date
-        ORDER BY production_date;
-        """
+        if factory == "All":
 
-        df = pd.read_sql(query, connection)
+            query = """
+            SELECT
+                production_date,
+                SUM(units_produced) AS total_units
+            FROM production_batches
+            GROUP BY production_date
+            ORDER BY production_date;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                pb.production_date,
+                SUM(pb.units_produced) AS total_units
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY pb.production_date
+            ORDER BY pb.production_date;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+
 
     @staticmethod
-    def monthly_production():
-        connection = get_connection()
+    def monthly_production(factory="All"):
+        """
+        Monthly production trend.
 
-        query = """
-        SELECT
-            DATE_FORMAT(production_date,'%Y-%m') AS month,
-            SUM(units_produced) AS total_units
-        FROM production_batches
-        GROUP BY month
-        ORDER BY month;
+        Returns:
+            month
+            total_units
         """
 
-        df = pd.read_sql(query, connection)
+        connection = get_connection()
+
+        if factory == "All":
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    production_date,
+                    '%Y-%m'
+                ) AS month,
+                SUM(units_produced) AS total_units
+            FROM production_batches
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    pb.production_date,
+                    '%Y-%m'
+                ) AS month,
+                SUM(pb.units_produced) AS total_units
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+
 
     @staticmethod
-    def daily_defect_rate():
+    def daily_defect_rate(factory="All"):
         connection = get_connection()
 
-        query = """
-        SELECT
-            production_date,
-            ROUND(
-                (SUM(defective_units)*100.0)/
-                SUM(units_produced),
-                2
-            ) AS defect_rate
-        FROM production_batches
-        GROUP BY production_date
-        ORDER BY production_date;
-        """
+        if factory == "All":
 
-        df = pd.read_sql(query, connection)
+            query = """
+            SELECT
+                production_date,
+                ROUND(
+                    (SUM(defective_units) * 100.0) /
+                    NULLIF(SUM(units_produced), 0),
+                    2
+                ) AS defect_rate
+            FROM production_batches
+            GROUP BY production_date
+            ORDER BY production_date;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                pb.production_date,
+                ROUND(
+                    (SUM(pb.defective_units) * 100.0) /
+                    NULLIF(SUM(pb.units_produced), 0),
+                    2
+                ) AS defect_rate
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY pb.production_date
+            ORDER BY pb.production_date;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+
 
     @staticmethod
-    def monthly_defect_rate():
+    def monthly_defect_rate(factory="All"):
         connection = get_connection()
 
-        query = """
-        SELECT
-            DATE_FORMAT(production_date,'%Y-%m') AS month,
-            ROUND(
-                (SUM(defective_units)*100.0)/
-                SUM(units_produced),
-                2
-            ) AS defect_rate
-        FROM production_batches
-        GROUP BY month
-        ORDER BY month;
-        """
+        if factory == "All":
 
-        df = pd.read_sql(query, connection)
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    production_date,
+                    '%Y-%m'
+                ) AS month,
+                ROUND(
+                    (SUM(defective_units) * 100.0) /
+                    NULLIF(SUM(units_produced), 0),
+                    2
+                ) AS defect_rate
+            FROM production_batches
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    pb.production_date,
+                    '%Y-%m'
+                ) AS month,
+                ROUND(
+                    (SUM(pb.defective_units) * 100.0) /
+                    NULLIF(SUM(pb.units_produced), 0),
+                    2
+                ) AS defect_rate
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+
 
     @staticmethod
-    def production_hours_trend():
+    def production_hours_trend(factory="All"):
         connection = get_connection()
 
-        query = """
-        SELECT
-            DATE_FORMAT(production_date,'%Y-%m') AS month,
-            ROUND(AVG(production_hours),2) AS avg_production_hours
-        FROM production_batches
-        GROUP BY month
-        ORDER BY month;
-        """
+        if factory == "All":
 
-        df = pd.read_sql(query, connection)
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    production_date,
+                    '%Y-%m'
+                ) AS month,
+                ROUND(
+                    AVG(production_hours),
+                    2
+                ) AS avg_production_hours
+            FROM production_batches
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    pb.production_date,
+                    '%Y-%m'
+                ) AS month,
+                ROUND(
+                    AVG(pb.production_hours),
+                    2
+                ) AS avg_production_hours
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+
 
     @staticmethod
-    def monthly_defects():
-        connection = get_connection()
+    def monthly_defects(factory="All"):
+        """
+        Monthly defective units trend.
 
-        query = """
-        SELECT
-            DATE_FORMAT(production_date,'%Y-%m') AS month,
-            SUM(defective_units) AS total_defects
-        FROM production_batches
-        GROUP BY month
-        ORDER BY month;
+        Returns:
+            month
+            total_defects
         """
 
-        df = pd.read_sql(query, connection)
+        connection = get_connection()
+
+        if factory == "All":
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    production_date,
+                    '%Y-%m'
+                ) AS month,
+                SUM(defective_units) AS total_defects
+            FROM production_batches
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                DATE_FORMAT(
+                    pb.production_date,
+                    '%Y-%m'
+                ) AS month,
+                SUM(pb.defective_units) AS total_defects
+            FROM production_batches pb
+            JOIN machines m
+                ON pb.machine_id = m.machine_id
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY month
+            ORDER BY month;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
+
         return df
+

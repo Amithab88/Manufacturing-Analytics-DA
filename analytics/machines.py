@@ -1,22 +1,64 @@
+# analytics/machines.py
+
 import pandas as pd
 from database.db_connection import get_connection
-
 
 class MachineAnalytics:
 
     @staticmethod
-    def machine_status():
-        connection = get_connection()
+    def machine_status(factory="All"):
+        """
+        Machine status distribution.
 
-        query = """
-        SELECT
-            status,
-            COUNT(*) AS total_machines
-        FROM machines
-        GROUP BY status;
+        If factory is 'All', returns machine status
+        across all factories.
+
+        Otherwise, returns machine status
+        for the selected factory.
         """
 
-        df = pd.read_sql(query, connection)
+        connection = get_connection()
+
+        if factory == "All":
+
+            query = """
+            SELECT
+                status,
+                COUNT(*) AS total_machines
+            FROM machines
+            GROUP BY status
+            ORDER BY total_machines DESC;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection
+            )
+
+        else:
+
+            query = """
+            SELECT
+                m.status,
+                COUNT(*) AS total_machines
+            FROM machines m
+            JOIN factories f
+                ON m.factory_id = f.factory_id
+            WHERE REPLACE(
+                f.factory_name,
+                ' Manufacturing Plant',
+                ''
+            ) = %s
+            GROUP BY m.status
+            ORDER BY total_machines DESC;
+            """
+
+            df = pd.read_sql(
+                query,
+                connection,
+                params=(factory,)
+            )
+
         connection.close()
 
         return df
@@ -24,6 +66,10 @@ class MachineAnalytics:
 
     @staticmethod
     def factory_machine_count():
+        """
+        Number of machines in each factory.
+        """
+
         connection = get_connection()
 
         query = """
@@ -37,7 +83,12 @@ class MachineAnalytics:
         ORDER BY total_machines DESC;
         """
 
-        df = pd.read_sql(query, connection)
+        df = pd.read_sql(
+            query,
+            connection
+        )
+
         connection.close()
 
         return df
+
