@@ -6,58 +6,96 @@ from database.db_connection import get_connection
 class MachineAnalytics:
 
     @staticmethod
-    def machine_status(factory="All"):
+    def machine_status(factory="All", statuses=None):
         """
         Machine status distribution.
 
-        If factory is 'All', returns machine status
-        across all factories.
+        Supports filtering by:
+        - Factory
+        - One or more machine statuses
 
-        Otherwise, returns machine status
-        for the selected factory.
+        If factory is 'All', returns machines across all factories.
+
+        If statuses is None or empty, all machine statuses are included.
         """
 
         connection = get_connection()
 
-        if factory == "All":
+        query = """
+        SELECT
+            m.status,
+            COUNT(m.machine_id) AS total_machines
+        FROM machines m
+        """
 
-            query = """
-            SELECT
-                status,
-                COUNT(*) AS total_machines
-            FROM machines
-            GROUP BY status
-            ORDER BY total_machines DESC;
-            """
+        params = []
+        conditions = []
 
-            df = pd.read_sql(
-                query,
-                connection
-            )
+        # -------------------------------------------------
+        # FACTORY FILTER
+        # -------------------------------------------------
 
-        else:
+        if factory != "All":
 
-            query = """
-            SELECT
-                m.status,
-                COUNT(*) AS total_machines
-            FROM machines m
+            query += """
             JOIN factories f
                 ON m.factory_id = f.factory_id
-            WHERE REPLACE(
+            """
+
+            conditions.append("""
+            REPLACE(
                 f.factory_name,
                 ' Manufacturing Plant',
                 ''
             ) = %s
-            GROUP BY m.status
-            ORDER BY total_machines DESC;
-            """
+            """)
 
-            df = pd.read_sql(
-                query,
-                connection,
-                params=(factory,)
+            params.append(factory)
+
+        # -------------------------------------------------
+        # MACHINE STATUS FILTER
+        # -------------------------------------------------
+
+        if statuses:
+
+            placeholders = ", ".join(
+                ["%s"] * len(statuses)
             )
+
+            conditions.append(
+                f"m.status IN ({placeholders})"
+            )
+
+            params.extend(statuses)
+
+        # -------------------------------------------------
+        # WHERE CLAUSE
+        # -------------------------------------------------
+
+        if conditions:
+
+            query += " WHERE "
+
+            query += " AND ".join(
+                conditions
+            )
+
+        # -------------------------------------------------
+        # GROUPING
+        # -------------------------------------------------
+
+        query += """
+        GROUP BY
+            m.status
+        ORDER BY
+            total_machines DESC;
+        """
+
+        df = pd.read_sql(
+            query,
+            connection,
+            params=params
+        )
 
         connection.close()
 

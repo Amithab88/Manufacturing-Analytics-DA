@@ -20,13 +20,18 @@ class DashboardService:
 
 
     @staticmethod
-    def factory_summary(factory="All"):
-        return FactoryAnalytics.factory_production(factory)
-
+    def factory_summary(factory="All", shift="All"):
+        return FactoryAnalytics.factory_production(
+            factory,
+            shift
+        )
 
     @staticmethod
-    def machine_status(factory="All"):
-        return MachineAnalytics.machine_status(factory)
+    def machine_status(factory="All", statuses=None):
+        return MachineAnalytics.machine_status(
+            factory,
+            statuses
+        )
 
 
     @staticmethod
