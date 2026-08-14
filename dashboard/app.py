@@ -75,7 +75,7 @@ selected_factory = st.sidebar.selectbox(
 shift_options = [
     "All",
     "Morning",
-    "Evening",
+    "Afternoon",
     "Night"
 ]
 
@@ -190,7 +190,8 @@ with col1:
     st.subheader("🏭 Factory Production")
 
     factory_df = DashboardService.factory_summary(
-        selected_factory
+    selected_factory,
+    selected_shift
     )
 
     factory_fig = factory_production_chart(
@@ -209,7 +210,8 @@ with col2:
     st.subheader("⚙ Machine Status")
 
     machine_df = DashboardService.machine_status(
-        selected_factory
+        selected_factory,
+        selected_status
     )
     machine_fig = machine_status_chart(
         machine_df
@@ -217,7 +219,7 @@ with col2:
 
     st.plotly_chart(
         machine_fig,
-        width="stretch"
+        use_container_width=True
     )
 
 
