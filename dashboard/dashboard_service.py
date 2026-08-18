@@ -15,8 +15,16 @@ from analytics.trends import TrendAnalytics
 class DashboardService:
 
     @staticmethod
-    def production_summary(factory="All"):
-        return ProductionAnalytics.get_summary(factory)
+    def production_summary(
+        factory="All",
+        shift="All",
+        statuses=None
+    ):
+        return ProductionAnalytics.get_summary(
+            factory,
+            shift,
+            statuses
+        )
 
 
     @staticmethod
@@ -50,19 +58,43 @@ class DashboardService:
 
 
     @staticmethod
-    def monthly_production(factory="All"):
-        return TrendAnalytics.monthly_production(factory)
+    def monthly_production(
+        factory="All",
+        shift="All",
+        statuses=None
+    ):
+        return TrendAnalytics.monthly_production(
+            factory,
+            shift,
+            statuses
+        )
 
 
     @staticmethod
-    def monthly_defects(factory="All"):
-        return TrendAnalytics.monthly_defects(factory)
+    def monthly_defects(
+        factory="All",
+        shift="All",
+        statuses=None
+    ):
+        return TrendAnalytics.monthly_defects(
+            factory,
+            shift,
+            statuses
+        )
 
 
     @staticmethod
-    def top_employees(factory="All"):
+    def top_employees(
+        limit=10,
+        factory="All",
+        shift="All",
+        statuses=None
+    ):
         return EmployeeAnalytics.top_employees(
-            factory=factory
+            limit,
+            factory,
+            shift,
+            statuses
         )
 
 

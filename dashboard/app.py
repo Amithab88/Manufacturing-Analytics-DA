@@ -122,7 +122,9 @@ st.markdown("---")
 # -------------------------------------------------
 
 summary = DashboardService.production_summary(
-    selected_factory
+    selected_factory,
+    selected_shift,
+    selected_status
 ).iloc[0]
 
 col1, col2, col3, col4 = st.columns(4)
@@ -238,7 +240,9 @@ with col3:
     st.subheader("📈 Monthly Production")
 
     trend_df = DashboardService.monthly_production(
-        selected_factory
+        selected_factory,
+        selected_shift,
+        selected_status
     )
 
     trend_fig = monthly_production_chart(
@@ -257,7 +261,9 @@ with col4:
     st.subheader("📉 Monthly Defect Trend")
 
     defect_df = DashboardService.monthly_defects(
-        selected_factory
+        selected_factory,
+        selected_shift,
+        selected_status
     )
 
     defect_fig = monthly_defect_chart(
@@ -279,7 +285,10 @@ st.markdown("---")
 st.subheader("🏆 Top Performing Employees")
 
 employee_df = DashboardService.top_employees(
-    selected_factory
+    10,
+    selected_factory,
+    selected_shift,
+    selected_status
 )
 st.dataframe(
     employee_df,
