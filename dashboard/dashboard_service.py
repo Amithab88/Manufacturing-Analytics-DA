@@ -18,20 +18,31 @@ class DashboardService:
     def production_summary(
         factory="All",
         shift="All",
-        statuses=None
+        statuses=None,
+        start_date=None,
+        end_date=None
     ):
         return ProductionAnalytics.get_summary(
             factory,
             shift,
-            statuses
+            statuses,
+            start_date,
+            end_date
         )
 
 
     @staticmethod
-    def factory_summary(factory="All", shift="All"):
+    def factory_summary(
+        factory="All", 
+        shift="All", 
+        start_date=None,
+        end_date=None
+    ):
         return FactoryAnalytics.factory_production(
             factory,
-            shift
+            shift,
+            start_date,
+            end_date
         )
 
     @staticmethod

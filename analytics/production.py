@@ -22,14 +22,22 @@ class ProductionAnalytics:
 
 
     @staticmethod
-    def get_summary(factory="All", shift="All", statuses=None):
+    def get_summary(
+        factory="All",
+        shift="All",
+        statuses=None,
+        start_date=None,
+        end_date=None
+    ):
         """
         Production summary with optional filters.
 
         Filters:
-        - factory: All or a specific factory
-        - shift: All, Morning, Afternoon, or Night
-        - statuses: None/empty or a list of machine statuses
+        - Factory
+        - Shift
+        - Machine Status
+        - Start Date
+        - End Date
         """
 
         connection = get_connection()
@@ -133,6 +141,26 @@ class ProductionAnalytics:
             )
 
             params.extend(statuses)
+
+        # -------------------------------------------------
+        # DATE FILTER
+        # -------------------------------------------------
+
+        if start_date is not None:
+
+            conditions.append(
+                "pb.production_date >= %s"
+            )
+
+            params.append(start_date)
+
+        if end_date is not None:
+
+            conditions.append(
+                "pb.production_date <= %s"
+            )
+
+            params.append(end_date)
 
         # -------------------------------------------------
         # WHERE CLAUSE

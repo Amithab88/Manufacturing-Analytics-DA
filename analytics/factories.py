@@ -5,270 +5,150 @@ from database.db_connection import get_connection
 class FactoryAnalytics:
 
     @staticmethod
-    def factory_production(factory="All", shift="All"):
+    def factory_production(
+        factory="All",
+        shift="All",
+        start_date=None,
+        end_date=None
+    ):
         """
         Factory-wise production summary.
 
         Supports filtering by:
         - Factory
         - Shift
+        - Start date
+        - End date
         """
 
         connection = get_connection()
 
-        # -------------------------------------------------
-        # ALL FACTORIES + ALL SHIFTS
-        # -------------------------------------------------
-
-        if factory == "All" and shift == "All":
-
-            query = """
-            SELECT
-                REPLACE(
-                    f.factory_name,
-                    ' Manufacturing Plant',
-                    ''
-                ) AS factory_name,
-
-                COUNT(pb.production_id) AS total_batches,
-
-                COALESCE(
-                    SUM(pb.units_produced),
-                    0
-                ) AS total_units_produced,
-
-                COALESCE(
-                    SUM(pb.defective_units),
-                    0
-                ) AS total_defective_units,
-
-                ROUND(
-                    COALESCE(
-                        (SUM(pb.defective_units) * 100.0) /
-                        NULLIF(SUM(pb.units_produced), 0),
-                        0
-                    ),
-                    2
-                ) AS defect_rate_percentage
-
-            FROM factories f
-
-            LEFT JOIN machines m
-                ON f.factory_id = m.factory_id
-
-            LEFT JOIN production_batches pb
-                ON m.machine_id = pb.machine_id
-
-            GROUP BY
-                f.factory_id,
-                f.factory_name
-
-            ORDER BY
-                total_units_produced DESC;
-            """
-
-            df = pd.read_sql(
-                query,
-                connection
-            )
-
-        # -------------------------------------------------
-        # ALL FACTORIES + SPECIFIC SHIFT
-        # -------------------------------------------------
-
-        elif factory == "All":
-
-            query = """
-            SELECT
-                REPLACE(
-                    f.factory_name,
-                    ' Manufacturing Plant',
-                    ''
-                ) AS factory_name,
-
-                COUNT(pb.production_id) AS total_batches,
-
-                COALESCE(
-                    SUM(pb.units_produced),
-                    0
-                ) AS total_units_produced,
-
-                COALESCE(
-                    SUM(pb.defective_units),
-                    0
-                ) AS total_defective_units,
-
-                ROUND(
-                    COALESCE(
-                        (SUM(pb.defective_units) * 100.0) /
-                        NULLIF(SUM(pb.units_produced), 0),
-                        0
-                    ),
-                    2
-                ) AS defect_rate_percentage
-
-            FROM factories f
-
-            LEFT JOIN machines m
-                ON f.factory_id = m.factory_id
-
-            LEFT JOIN production_batches pb
-                ON m.machine_id = pb.machine_id
-
-            LEFT JOIN shifts s
-                ON pb.shift_id = s.shift_id
-
-            WHERE s.shift_name = %s
-
-            GROUP BY
-                f.factory_id,
-                f.factory_name
-
-            ORDER BY
-                total_units_produced DESC;
-            """
-
-            df = pd.read_sql(
-                query,
-                connection,
-                params=(shift,)
-            )
-
-        # -------------------------------------------------
-        # SPECIFIC FACTORY + ALL SHIFTS
-        # -------------------------------------------------
-
-        elif shift == "All":
-
-            query = """
-            SELECT
-                REPLACE(
-                    f.factory_name,
-                    ' Manufacturing Plant',
-                    ''
-                ) AS factory_name,
-
-                COUNT(pb.production_id) AS total_batches,
-
-                COALESCE(
-                    SUM(pb.units_produced),
-                    0
-                ) AS total_units_produced,
-
-                COALESCE(
-                    SUM(pb.defective_units),
-                    0
-                ) AS total_defective_units,
-
-                ROUND(
-                    COALESCE(
-                        (SUM(pb.defective_units) * 100.0) /
-                        NULLIF(SUM(pb.units_produced), 0),
-                        0
-                    ),
-                    2
-                ) AS defect_rate_percentage
-
-            FROM factories f
-
-            LEFT JOIN machines m
-                ON f.factory_id = m.factory_id
-
-            LEFT JOIN production_batches pb
-                ON m.machine_id = pb.machine_id
-
-            WHERE REPLACE(
+        query = """
+        SELECT
+            REPLACE(
                 f.factory_name,
                 ' Manufacturing Plant',
                 ''
-            ) = %s
+            ) AS factory_name,
 
-            GROUP BY
-                f.factory_id,
-                f.factory_name
+            COUNT(pb.production_id) AS total_batches,
 
-            ORDER BY
-                total_units_produced DESC;
-            """
+            COALESCE(
+                SUM(pb.units_produced),
+                0
+            ) AS total_units_produced,
 
-            df = pd.read_sql(
-                query,
-                connection,
-                params=(factory,)
-            )
+            COALESCE(
+                SUM(pb.defective_units),
+                0
+            ) AS total_defective_units,
+
+            ROUND(
+                COALESCE(
+                    (SUM(pb.defective_units) * 100.0) /
+                    NULLIF(SUM(pb.units_produced), 0),
+                    0
+                ),
+                2
+            ) AS defect_rate_percentage
+
+        FROM factories f
+
+        LEFT JOIN machines m
+            ON f.factory_id = m.factory_id
+
+        LEFT JOIN production_batches pb
+            ON m.machine_id = pb.machine_id
+
+        LEFT JOIN shifts s
+            ON pb.shift_id = s.shift_id
+        """
+
+        conditions = []
+        params = []
 
         # -------------------------------------------------
-        # SPECIFIC FACTORY + SPECIFIC SHIFT
+        # FACTORY FILTER
         # -------------------------------------------------
 
-        else:
+        if factory != "All":
 
-            query = """
-            SELECT
+            conditions.append("""
                 REPLACE(
                     f.factory_name,
                     ' Manufacturing Plant',
                     ''
-                ) AS factory_name,
+                ) = %s
+            """)
 
-                COUNT(pb.production_id) AS total_batches,
+            params.append(factory)
 
-                COALESCE(
-                    SUM(pb.units_produced),
-                    0
-                ) AS total_units_produced,
+        # -------------------------------------------------
+        # SHIFT FILTER
+        # -------------------------------------------------
 
-                COALESCE(
-                    SUM(pb.defective_units),
-                    0
-                ) AS total_defective_units,
+        if shift != "All":
 
-                ROUND(
-                    COALESCE(
-                        (SUM(pb.defective_units) * 100.0) /
-                        NULLIF(SUM(pb.units_produced), 0),
-                        0
-                    ),
-                    2
-                ) AS defect_rate_percentage
-
-            FROM factories f
-
-            JOIN machines m
-                ON f.factory_id = m.factory_id
-
-            JOIN production_batches pb
-                ON m.machine_id = pb.machine_id
-
-            JOIN shifts s
-                ON pb.shift_id = s.shift_id
-
-            WHERE REPLACE(
-                f.factory_name,
-                ' Manufacturing Plant',
-                ''
-            ) = %s
-
-            AND s.shift_name = %s
-
-            GROUP BY
-                f.factory_id,
-                f.factory_name
-
-            ORDER BY
-                total_units_produced DESC;
-            """
-
-            df = pd.read_sql(
-                query,
-                connection,
-                params=(factory, shift)
+            conditions.append(
+                "s.shift_name = %s"
             )
+
+            params.append(shift)
+
+        # -------------------------------------------------
+        # DATE FILTER
+        # -------------------------------------------------
+
+        if start_date is not None:
+
+            conditions.append(
+                "pb.production_date >= %s"
+            )
+
+            params.append(start_date)
+
+        if end_date is not None:
+
+            conditions.append(
+                "pb.production_date <= %s"
+            )
+
+            params.append(end_date)
+
+        # -------------------------------------------------
+        # WHERE
+        # -------------------------------------------------
+
+        if conditions:
+
+            query += "\nWHERE "
+
+            query += " AND ".join(
+                conditions
+            )
+
+        # -------------------------------------------------
+        # GROUP + ORDER
+        # -------------------------------------------------
+
+        query += """
+        GROUP BY
+            f.factory_id,
+            f.factory_name
+
+        ORDER BY
+            total_units_produced DESC;
+        """
+
+        df = pd.read_sql(
+            query,
+            connection,
+            params=params
+        )
 
         connection.close()
 
         return df
-
     @staticmethod
     def machine_count():
         """

@@ -1,7 +1,7 @@
 import streamlit as st
 import sys
 from pathlib import Path
-
+from datetime import date
 from styles import load_css
 
 
@@ -59,8 +59,10 @@ st.sidebar.markdown("---")
 
 st.sidebar.header("Filters")
 
+# -------------------------------------------------
 
 # Factory Filter
+
 factory_options = [
     "All"
 ] + DashboardService.get_factory_names()
@@ -70,8 +72,10 @@ selected_factory = st.sidebar.selectbox(
     factory_options
 )
 
+# -------------------------------------------------
 
 # Shift Filter
+
 shift_options = [
     "All",
     "Morning",
@@ -84,8 +88,10 @@ selected_shift = st.sidebar.selectbox(
     shift_options
 )
 
+# -------------------------------------------------
 
 # Machine Status Filter
+
 selected_status = st.sidebar.multiselect(
     "Machine Status",
     [
@@ -102,6 +108,23 @@ selected_status = st.sidebar.multiselect(
     ]
 )
 
+# -------------------------------------------------
+
+# DATE RANGE FILTER
+
+st.sidebar.markdown("---")
+
+st.sidebar.subheader("📅 Date Range")
+
+start_date = st.sidebar.date_input(
+    "Start Date",
+    value=date(2023, 1, 1)
+)
+
+end_date = st.sidebar.date_input(
+    "End Date",
+    value=date(2026, 6, 30)
+)
 
 # -------------------------------------------------
 # HEADER
@@ -124,7 +147,9 @@ st.markdown("---")
 summary = DashboardService.production_summary(
     selected_factory,
     selected_shift,
-    selected_status
+    selected_status,
+    start_date,
+    end_date
 ).iloc[0]
 
 col1, col2, col3, col4 = st.columns(4)
@@ -193,7 +218,9 @@ with col1:
 
     factory_df = DashboardService.factory_summary(
     selected_factory,
-    selected_shift
+    selected_shift,
+    start_date,
+    end_date
     )
 
     factory_fig = factory_production_chart(
