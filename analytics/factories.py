@@ -8,6 +8,7 @@ class FactoryAnalytics:
     def factory_production(
         factory="All",
         shift="All",
+        statuses=None,
         start_date=None,
         end_date=None
     ):
@@ -96,6 +97,22 @@ class FactoryAnalytics:
             params.append(shift)
 
         # -------------------------------------------------
+        # MACHINE STATUS FILTER
+        # -------------------------------------------------
+
+        if statuses:
+
+            placeholders = ", ".join(
+                ["%s"] * len(statuses)
+            )
+
+            conditions.append(
+                f"m.status IN ({placeholders})"
+            )
+
+            params.extend(statuses)
+
+        # -------------------------------------------------
         # DATE FILTER
         # -------------------------------------------------
 
@@ -149,6 +166,8 @@ class FactoryAnalytics:
         connection.close()
 
         return df
+
+    
     @staticmethod
     def machine_count():
         """

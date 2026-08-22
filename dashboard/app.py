@@ -192,7 +192,9 @@ st.subheader("🕐 Shift Performance")
 
 shift_df = DashboardService.shift_performance(
     selected_shift,
-    selected_factory
+    selected_factory,
+    start_date,
+    end_date
 )
 
 st.dataframe(
@@ -219,6 +221,7 @@ with col1:
     factory_df = DashboardService.factory_summary(
     selected_factory,
     selected_shift,
+    selected_status,
     start_date,
     end_date
     )
@@ -267,9 +270,11 @@ with col3:
     st.subheader("📈 Monthly Production")
 
     trend_df = DashboardService.monthly_production(
-        selected_factory,
-        selected_shift,
-        selected_status
+    selected_factory,
+    selected_shift,
+    selected_status,
+    start_date,
+    end_date
     )
 
     trend_fig = monthly_production_chart(
@@ -288,9 +293,11 @@ with col4:
     st.subheader("📉 Monthly Defect Trend")
 
     defect_df = DashboardService.monthly_defects(
-        selected_factory,
-        selected_shift,
-        selected_status
+    selected_factory,
+    selected_shift,
+    selected_status,
+    start_date,
+    end_date
     )
 
     defect_fig = monthly_defect_chart(

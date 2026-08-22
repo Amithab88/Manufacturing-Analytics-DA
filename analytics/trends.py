@@ -55,12 +55,13 @@ class TrendAnalytics:
 
         return df
 
-
     @staticmethod
     def monthly_production(
         factory="All",
         shift="All",
-        statuses=None
+        statuses=None,
+        start_date=None,
+        end_date=None
     ):
         """
         Monthly production trend.
@@ -69,6 +70,12 @@ class TrendAnalytics:
         - Factory
         - Shift
         - Machine Status
+        - Start Date
+        - End Date
+
+        Returns:
+        - month
+        - total_units
         """
 
         connection = get_connection()
@@ -80,7 +87,9 @@ class TrendAnalytics:
                 '%Y-%m'
             ) AS month,
 
-            SUM(pb.units_produced) AS total_units
+            SUM(
+                pb.units_produced
+            ) AS total_units
 
         FROM production_batches pb
 
@@ -97,28 +106,40 @@ class TrendAnalytics:
         conditions = []
         params = []
 
-        # Factory filter
+        # -------------------------------------------------
+        # FACTORY FILTER
+        # -------------------------------------------------
+
         if factory != "All":
-            conditions.append(
-                """
+
+            conditions.append("""
                 REPLACE(
                     f.factory_name,
                     ' Manufacturing Plant',
                     ''
                 ) = %s
-                """
-            )
+            """)
+
             params.append(factory)
 
-        # Shift filter
+        # -------------------------------------------------
+        # SHIFT FILTER
+        # -------------------------------------------------
+
         if shift != "All":
+
             conditions.append(
                 "s.shift_name = %s"
             )
+
             params.append(shift)
 
-        # Machine status filter
+        # -------------------------------------------------
+        # MACHINE STATUS FILTER
+        # -------------------------------------------------
+
         if statuses:
+
             placeholders = ", ".join(
                 ["%s"] * len(statuses)
             )
@@ -129,9 +150,45 @@ class TrendAnalytics:
 
             params.extend(statuses)
 
+        # -------------------------------------------------
+        # START DATE FILTER
+        # -------------------------------------------------
+
+        if start_date is not None:
+
+            conditions.append(
+                "pb.production_date >= %s"
+            )
+
+            params.append(start_date)
+
+        # -------------------------------------------------
+        # END DATE FILTER
+        # -------------------------------------------------
+
+        if end_date is not None:
+
+            conditions.append(
+                "pb.production_date <= %s"
+            )
+
+            params.append(end_date)
+
+        # -------------------------------------------------
+        # WHERE CLAUSE
+        # -------------------------------------------------
+
         if conditions:
+
             query += "\nWHERE "
-            query += " AND ".join(conditions)
+
+            query += " AND ".join(
+                conditions
+            )
+
+        # -------------------------------------------------
+        # GROUPING
+        # -------------------------------------------------
 
         query += """
         GROUP BY month
@@ -340,7 +397,9 @@ class TrendAnalytics:
     def monthly_defects(
         factory="All",
         shift="All",
-        statuses=None
+        statuses=None,
+        start_date=None,
+        end_date=None
     ):
         """
         Monthly defective units trend.
@@ -349,6 +408,12 @@ class TrendAnalytics:
         - Factory
         - Shift
         - Machine Status
+        - Start Date
+        - End Date
+
+        Returns:
+        - month
+        - total_defects
         """
 
         connection = get_connection()
@@ -360,7 +425,9 @@ class TrendAnalytics:
                 '%Y-%m'
             ) AS month,
 
-            SUM(pb.defective_units) AS total_defects
+            SUM(
+                pb.defective_units
+            ) AS total_defects
 
         FROM production_batches pb
 
@@ -377,28 +444,40 @@ class TrendAnalytics:
         conditions = []
         params = []
 
-        # Factory filter
+        # -------------------------------------------------
+        # FACTORY FILTER
+        # -------------------------------------------------
+
         if factory != "All":
-            conditions.append(
-                """
+
+            conditions.append("""
                 REPLACE(
                     f.factory_name,
                     ' Manufacturing Plant',
                     ''
                 ) = %s
-                """
-            )
+            """)
+
             params.append(factory)
 
-        # Shift filter
+        # -------------------------------------------------
+        # SHIFT FILTER
+        # -------------------------------------------------
+
         if shift != "All":
+
             conditions.append(
                 "s.shift_name = %s"
             )
+
             params.append(shift)
 
-        # Machine status filter
+        # -------------------------------------------------
+        # MACHINE STATUS FILTER
+        # -------------------------------------------------
+
         if statuses:
+
             placeholders = ", ".join(
                 ["%s"] * len(statuses)
             )
@@ -409,9 +488,45 @@ class TrendAnalytics:
 
             params.extend(statuses)
 
+        # -------------------------------------------------
+        # START DATE FILTER
+        # -------------------------------------------------
+
+        if start_date is not None:
+
+            conditions.append(
+                "pb.production_date >= %s"
+            )
+
+            params.append(start_date)
+
+        # -------------------------------------------------
+        # END DATE FILTER
+        # -------------------------------------------------
+
+        if end_date is not None:
+
+            conditions.append(
+                "pb.production_date <= %s"
+            )
+
+            params.append(end_date)
+
+        # -------------------------------------------------
+        # WHERE CLAUSE
+        # -------------------------------------------------
+
         if conditions:
+
             query += "\nWHERE "
-            query += " AND ".join(conditions)
+
+            query += " AND ".join(
+                conditions
+            )
+
+        # -------------------------------------------------
+        # GROUPING
+        # -------------------------------------------------
 
         query += """
         GROUP BY month

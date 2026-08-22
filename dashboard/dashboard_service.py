@@ -34,13 +34,15 @@ class DashboardService:
     @staticmethod
     def factory_summary(
         factory="All", 
-        shift="All", 
+        shift="All",
+        statuses=None, 
         start_date=None,
         end_date=None
     ):
         return FactoryAnalytics.factory_production(
             factory,
             shift,
+            statuses,
             start_date,
             end_date
         )
@@ -72,12 +74,16 @@ class DashboardService:
     def monthly_production(
         factory="All",
         shift="All",
-        statuses=None
+        statuses=None,
+        start_date=None,
+        end_date=None
     ):
         return TrendAnalytics.monthly_production(
             factory,
             shift,
-            statuses
+            statuses,
+            start_date,
+            end_date
         )
 
 
@@ -85,12 +91,16 @@ class DashboardService:
     def monthly_defects(
         factory="All",
         shift="All",
-        statuses=None
+        statuses=None,
+        start_date=None,
+        end_date=None
     ):
         return TrendAnalytics.monthly_defects(
             factory,
             shift,
-            statuses
+            statuses,
+            start_date,
+            end_date
         )
 
 
@@ -110,10 +120,17 @@ class DashboardService:
 
 
     @staticmethod
-    def shift_performance(shift="All", factory="All"):
+    def shift_performance(
+            shift="All", 
+            factory="All",
+            start_date=None,
+            end_date=None
+    ):
         return EmployeeAnalytics.shift_performance(
             shift,
-            factory
+            factory,
+            start_date,
+            end_date
         )
 
 
