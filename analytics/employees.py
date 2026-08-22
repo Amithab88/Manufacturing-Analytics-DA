@@ -121,189 +121,161 @@ class EmployeeAnalytics:
         return df
 
     @staticmethod
-    def shift_performance(shift="All", factory="All"):
+    def shift_performance(
+        shift="All",
+        factory="All",
+        start_date=None,
+        end_date=None
+    ):
         """
         Production summary for every shift.
-        Can be filtered by factory.
+
+        Supports filtering by:
+        - Shift
+        - Factory
+        - Start date
+        - End date
         """
 
         connection = get_connection()
 
+        query = """
+        SELECT
+            s.shift_name,
+
+            COUNT(pb.production_id) AS total_batches,
+
+            COALESCE(
+                SUM(pb.units_produced),
+                0
+            ) AS total_units,
+
+            COALESCE(
+                SUM(pb.defective_units),
+                0
+            ) AS defective_units,
+
+            ROUND(
+                COALESCE(
+                    AVG(pb.production_hours),
+                    0
+                ),
+                2
+            ) AS avg_hours,
+
+            ROUND(
+                COALESCE(
+                    (
+                        SUM(pb.defective_units) * 100.0
+                    ) /
+                    NULLIF(
+                        SUM(pb.units_produced),
+                        0
+                    ),
+                    0
+                ),
+                2
+            ) AS defect_rate
+
+        FROM shifts s
+
+        LEFT JOIN production_batches pb
+            ON s.shift_id = pb.shift_id
+
+        LEFT JOIN machines m
+            ON pb.machine_id = m.machine_id
+
+        LEFT JOIN factories f
+            ON m.factory_id = f.factory_id
+        """
+
+        conditions = []
+        params = []
+
         # -------------------------------------------------
-        # ALL FACTORIES
+        # SHIFT FILTER
         # -------------------------------------------------
 
-        if factory == "All":
+        if shift != "All":
 
-            if shift == "All":
+            conditions.append(
+                "s.shift_name = %s"
+            )
 
-                query = """
-                SELECT
-                    s.shift_name,
-                    COUNT(pb.production_id) AS total_batches,
-                    COALESCE(SUM(pb.units_produced), 0) AS total_units,
-                    COALESCE(SUM(pb.defective_units), 0) AS defective_units,
-                    ROUND(
-                        COALESCE(AVG(pb.production_hours), 0),
-                        2
-                    ) AS avg_hours,
-                    ROUND(
-                        COALESCE(
-                            (SUM(pb.defective_units) * 100.0) /
-                            NULLIF(SUM(pb.units_produced), 0),
-                            0
-                        ),
-                        2
-                    ) AS defect_rate
-                FROM shifts s
-                LEFT JOIN production_batches pb
-                    ON s.shift_id = pb.shift_id
-                GROUP BY
-                    s.shift_id,
-                    s.shift_name
-                ORDER BY total_units DESC;
+            params.append(shift)
+
+        # -------------------------------------------------
+        # FACTORY FILTER
+        # -------------------------------------------------
+
+        if factory != "All":
+
+            conditions.append(
                 """
-
-                df = pd.read_sql(
-                    query,
-                    connection
-                )
-
-            else:
-
-                query = """
-                SELECT
-                    s.shift_name,
-                    COUNT(pb.production_id) AS total_batches,
-                    COALESCE(SUM(pb.units_produced), 0) AS total_units,
-                    COALESCE(SUM(pb.defective_units), 0) AS defective_units,
-                    ROUND(
-                        COALESCE(AVG(pb.production_hours), 0),
-                        2
-                    ) AS avg_hours,
-                    ROUND(
-                        COALESCE(
-                            (SUM(pb.defective_units) * 100.0) /
-                            NULLIF(SUM(pb.units_produced), 0),
-                            0
-                        ),
-                        2
-                    ) AS defect_rate
-                FROM shifts s
-                LEFT JOIN production_batches pb
-                    ON s.shift_id = pb.shift_id
-                WHERE s.shift_name = %s
-                GROUP BY
-                    s.shift_id,
-                    s.shift_name
-                ORDER BY total_units DESC;
-                """
-
-                df = pd.read_sql(
-                    query,
-                    connection,
-                    params=(shift,)
-                )
-
-        # -------------------------------------------------
-        # SPECIFIC FACTORY
-        # -------------------------------------------------
-
-        else:
-
-            if shift == "All":
-
-                query = """
-                SELECT
-                    s.shift_name,
-                    COUNT(pb.production_id) AS total_batches,
-                    COALESCE(SUM(pb.units_produced), 0) AS total_units,
-                    COALESCE(SUM(pb.defective_units), 0) AS defective_units,
-                    ROUND(
-                        COALESCE(AVG(pb.production_hours), 0),
-                        2
-                    ) AS avg_hours,
-                    ROUND(
-                        COALESCE(
-                            (SUM(pb.defective_units) * 100.0) /
-                            NULLIF(SUM(pb.units_produced), 0),
-                            0
-                        ),
-                        2
-                    ) AS defect_rate
-                FROM shifts s
-                JOIN production_batches pb
-                    ON s.shift_id = pb.shift_id
-                JOIN machines m
-                    ON pb.machine_id = m.machine_id
-                JOIN factories f
-                    ON m.factory_id = f.factory_id
-                WHERE REPLACE(
+                REPLACE(
                     f.factory_name,
                     ' Manufacturing Plant',
                     ''
                 ) = %s
-                GROUP BY
-                    s.shift_id,
-                    s.shift_name
-                ORDER BY total_units DESC;
                 """
+            )
 
-                df = pd.read_sql(
-                    query,
-                    connection,
-                    params=(factory,)
-                )
+            params.append(factory)
 
-            else:
+        # -------------------------------------------------
+        # DATE FILTER
+        # -------------------------------------------------
 
-                query = """
-                SELECT
-                    s.shift_name,
-                    COUNT(pb.production_id) AS total_batches,
-                    COALESCE(SUM(pb.units_produced), 0) AS total_units,
-                    COALESCE(SUM(pb.defective_units), 0) AS defective_units,
-                    ROUND(
-                        COALESCE(AVG(pb.production_hours), 0),
-                        2
-                    ) AS avg_hours,
-                    ROUND(
-                        COALESCE(
-                            (SUM(pb.defective_units) * 100.0) /
-                            NULLIF(SUM(pb.units_produced), 0),
-                            0
-                        ),
-                        2
-                    ) AS defect_rate
-                FROM shifts s
-                JOIN production_batches pb
-                    ON s.shift_id = pb.shift_id
-                JOIN machines m
-                    ON pb.machine_id = m.machine_id
-                JOIN factories f
-                    ON m.factory_id = f.factory_id
-                WHERE s.shift_name = %s
-                AND REPLACE(
-                        f.factory_name,
-                        ' Manufacturing Plant',
-                        ''
-                    ) = %s
-                GROUP BY
-                    s.shift_id,
-                    s.shift_name
-                ORDER BY total_units DESC;
-                """
+        if start_date is not None:
 
-                df = pd.read_sql(
-                    query,
-                    connection,
-                    params=(shift, factory)
-                )
+            conditions.append(
+                "pb.production_date >= %s"
+            )
+
+            params.append(start_date)
+
+        if end_date is not None:
+
+            conditions.append(
+                "pb.production_date <= %s"
+            )
+
+            params.append(end_date)
+
+        # -------------------------------------------------
+        # WHERE CLAUSE
+        # -------------------------------------------------
+
+        if conditions:
+
+            query += "\nWHERE "
+
+            query += " AND ".join(
+                conditions
+            )
+
+        # -------------------------------------------------
+        # GROUP + ORDER
+        # -------------------------------------------------
+
+        query += """
+        GROUP BY
+            s.shift_id,
+            s.shift_name
+
+        ORDER BY
+            total_units DESC;
+        """
+
+        df = pd.read_sql(
+            query,
+            connection,
+            params=params
+        )
 
         connection.close()
 
         return df
-
 
     @staticmethod
     def top_employees(
