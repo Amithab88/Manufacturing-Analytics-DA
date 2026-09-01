@@ -61,8 +61,36 @@ class DashboardService:
 
 
     @staticmethod
-    def quality_summary():
-        return QualityAnalytics.quality_summary()
+    def quality_summary(
+        factory="All",
+        shift="All",
+        statuses=None,
+        start_date=None,
+        end_date=None
+    ):
+        return QualityAnalytics.quality_summary(
+            factory,
+            shift,
+            statuses,
+            start_date,
+            end_date
+        )
+
+    @staticmethod
+    def factory_quality(
+        factory="All",
+        shift="All",
+        statuses=None,
+        start_date=None,
+        end_date=None
+    ):
+        return QualityAnalytics.factory_quality(
+            factory,
+            shift,
+            statuses,
+            start_date,
+            end_date
+        )
 
 
     @staticmethod

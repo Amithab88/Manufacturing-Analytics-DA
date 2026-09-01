@@ -24,6 +24,7 @@ from charts import (
     machine_status_chart,
     monthly_production_chart,
     monthly_defect_chart,
+    factory_quality_chart,
     top_employees_chart
 )
 
@@ -255,6 +256,33 @@ with col2:
     )
 
 
+
+# -------------------------------------------------
+# FACTORY QUALITY
+# -------------------------------------------------
+
+st.markdown("---")
+
+st.subheader("📊 Factory Quality Performance")
+
+quality_factory_df = DashboardService.factory_quality(
+    selected_factory,
+    selected_shift,
+    selected_status,
+    start_date,
+    end_date
+)
+
+quality_factory_fig = factory_quality_chart(
+    quality_factory_df
+)
+
+st.plotly_chart(
+    quality_factory_fig,
+    width="stretch"
+)
+
+
 # -------------------------------------------------
 # MONTHLY TRENDS
 # -------------------------------------------------
@@ -308,6 +336,67 @@ with col4:
         defect_fig,
         width="stretch"
     )
+
+# -------------------------------------------------
+# QUALITY ANALYTICS
+# -------------------------------------------------
+
+st.markdown("---")
+
+st.subheader("🛡️ Quality Summary")
+
+quality_df = DashboardService.quality_summary(
+    selected_factory,
+    selected_shift,
+    selected_status,
+    start_date,
+    end_date
+)
+
+quality = quality_df.iloc[0]
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    metric_card(
+        "Total Units Inspected",
+        f"{int(quality['total_units_produced']):,}"
+    )
+
+with col2:
+    metric_card(
+        "Total Defective Units",
+        f"{int(quality['total_defective_units']):,}"
+    )
+
+with col3:
+    metric_card(
+        "Quality Defect Rate",
+        f"{quality['defect_rate_percentage']} %"
+    )
+
+
+# -------------------------------------------------
+# FACTORY QUALITY
+# -------------------------------------------------
+
+st.markdown("---")
+
+st.subheader("🏭 Factory Quality Performance")
+
+factory_quality_df = DashboardService.factory_quality(
+    selected_factory,
+    selected_shift,
+    selected_status,
+    start_date,
+    end_date
+)
+
+st.dataframe(
+    factory_quality_df,
+    width="stretch",
+    hide_index=True
+)
 
 
 # -------------------------------------------------

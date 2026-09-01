@@ -78,6 +78,33 @@ def monthly_defect_chart(df):
 
     return fig
 
+def factory_quality_chart(df):
+    fig = px.bar(
+        df,
+        x="factory_name",
+        y="defect_rate",
+        title="Factory Quality Performance",
+        labels={
+            "factory_name": "Factory",
+            "defect_rate": "Defect Rate (%)"
+        },
+        text="defect_rate"
+    )
+
+    fig.update_traces(
+        texttemplate="%{text:.2f}%",
+        textposition="outside"
+    )
+
+    fig.update_layout(
+        xaxis_title="Factory",
+        yaxis_title="Defect Rate (%)",
+        yaxis=dict(rangemode="tozero"),
+        height=400
+    )
+
+    return fig
+
 def top_employees_chart(df):
     fig = px.bar(
         df,
@@ -103,3 +130,4 @@ def top_employees_chart(df):
     )
 
     return fig
+
