@@ -169,4 +169,15 @@ manufacturing-analytics/
 
 ---
 
+## 🗺️ Roadmap
 
+- [ ] Parameterize generator scripts (env vars instead of hardcoded paths)
+- [ ] Add a Maintenance & Defects tab
+- [ ] Add automated tests for the analytics layer (mocked DB)
+- [ ] Cache expensive queries with `st.cache_data`
+
+---
+
+## 📄 License
+
+MIT
