@@ -4,5 +4,6 @@ __pycache__/
 .env
 data/raw/*.csv
 .streamlit/secrets.toml
+*.pem
 docs/screenshots/*.png
 !docs/screenshots/.gitkeep

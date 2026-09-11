@@ -1,5 +1,3 @@
-CREATE DATABASE manufacturing_analytics;
-USE manufacturing_analytics;
 
 CREATE TABLE Factories (
     factory_id        INT AUTO_INCREMENT PRIMARY KEY,
